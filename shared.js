@@ -61,7 +61,6 @@ function injectNav(activePage) {
   const links = PAGES.map(p =>
     `<a href="${p.href}" class="${p.label === activePage ? 'active' : ''}">${p.label}</a>`
   ).join('');
-
   document.querySelector('nav').innerHTML = `
     <a href="index.html" class="nav-logo">
       ${NAV_SVG}
@@ -85,27 +84,27 @@ function injectFooter() {
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Address</h4>
-          <p>20, Gwangun-ro, Nowon-gu<br>Seoul, Republic of Korea<br>ZIP: 01897</p>
+          <p>#802 Sabit-Bldg, 20, Gwangun-ro<br>Nowon-gu, Seoul, Republic of Korea<br>ZIP: 01897</p>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:mcho@kw.ac.kr">Professor | mcho@kw.ac.kr</a>
+          <a href="tel:+8229408454">Tel: +82-2-940-8454</a>
           <a href="http://kw.ac.kr" target="_blank">Kwangwoon University</a>
-          <a href="http://ic.kw.ac.kr" target="_blank">School of Info. Convergence</a>
         </div>
         <div class="footer-col">
           <h4>Links</h4>
-          <a href="#" target="_blank">Google Scholar</a>
-          <a href="#" target="_blank">ResearchGate</a>
-          <a href="#" target="_blank">DBLP</a>
+          <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
+          <a href="https://www.researchgate.net/profile/Minsu-Cho" target="_blank">ResearchGate</a>
+          <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2025 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
       <div class="footer-socials">
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Google Scholar</a>
+        <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
       </div>
     </div>
   `;
