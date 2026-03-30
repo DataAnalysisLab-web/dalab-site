@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +9,18 @@
   <style>
     .prof-section { padding: 52px 0; }
 
-    /* Top profile card */
     .prof-top {
-      display: flex; gap: 32px; align-items: flex-start;
+      display: flex; gap: 36px; align-items: flex-start;
       background: #fff; border: 1px solid var(--border);
-      border-radius: 14px; padding: 32px; margin-bottom: 48px;
+      border-radius: 14px; padding: 36px; margin-bottom: 48px;
     }
     .prof-photo {
-      width: 160px; height: 200px; border-radius: 10px;
+      width: 200px; height: 250px; border-radius: 12px;
       background: var(--bg-light); border: 2px solid var(--border);
       flex-shrink: 0; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
     }
-    .prof-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .prof-photo-placeholder {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-    }
-    .prof-photo-placeholder svg { stroke: #CCC; }
-    .prof-photo-placeholder span { font-size: 11px; color: #BBB; }
+    .prof-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
     .prof-basic h1 {
       font-size: 28px; font-weight: 700; color: var(--text-primary);
       font-family: Georgia, serif; margin-bottom: 4px;
@@ -42,7 +37,6 @@
     }
     .prof-links a:hover { background: var(--red-light); }
 
-    /* Info sections */
     .info-block { margin-bottom: 44px; }
     .info-block h2 {
       font-size: 18px; font-weight: 700; color: var(--red-dark);
@@ -64,34 +58,26 @@
     .info-list .sub { font-size: 12.5px; color: #888; margin-top: 2px; }
     .info-list .sub em { color: #666; }
 
-    /* Nested list for professional activities */
     .act-group { margin-bottom: 20px; }
-    .act-group-title {
-      font-size: 14px; font-weight: 700; color: var(--text-primary);
-      margin-bottom: 10px;
-    }
+    .act-group-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
     .act-sub-list { list-style: none; padding: 0; margin: 0; }
     .act-sub-list li {
       font-size: 13.5px; color: var(--text-secondary);
       padding: 5px 0 5px 14px; position: relative; line-height: 1.6;
     }
-    .act-sub-list li::before {
-      content: '–'; position: absolute; left: 0; color: #BBB;
-    }
+    .act-sub-list li::before { content: '–'; position: absolute; left: 0; color: #BBB; }
 
-    /* Back button */
     .back-btn {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 13px; color: var(--red-mid);
       border: 1px solid var(--border); border-radius: 6px;
-      padding: 7px 14px; margin-bottom: 28px;
-      transition: background 0.2s;
+      padding: 7px 14px; margin-bottom: 28px; transition: background 0.2s;
     }
     .back-btn:hover { background: var(--red-light); }
 
     @media (max-width: 768px) {
       .prof-top { flex-direction: column; }
-      .prof-photo { width: 120px; height: 150px; }
+      .prof-photo { width: 150px; height: 185px; }
     }
   </style>
 </head>
@@ -110,18 +96,13 @@
 
       <a href="members.html" class="back-btn">← Back to Members</a>
 
-      <!-- TOP PROFILE -->
       <div class="prof-top">
         <div class="prof-photo">
-          <!-- 실제 사진으로 교체: <img src="images/minsucho.jpg" alt="Minsu Cho"> -->
-          <div class="prof-photo-placeholder">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            <span>Photo</span>
-          </div>
+          <img src="images1/Prof_Minsu_Cho.jpeg" alt="Prof. Minsu Cho">
         </div>
         <div class="prof-basic">
           <h1>Minsu Cho, Ph.D.</h1>
-          <div class="role">Assistant Professor</div>
+          <div class="role">Associate Professor</div>
           <div class="affil">School of Information Convergence<br>Kwangwoon University</div>
           <div class="meta">
             <strong>Address:</strong> #802 Sabit-Bldg, 20, Gwangun-ro, Nowon-gu, Seoul<br>
@@ -136,7 +117,6 @@
         </div>
       </div>
 
-      <!-- EDUCATIONAL BACKGROUND -->
       <div class="info-block">
         <h2>Educational Background</h2>
         <ul class="info-list">
@@ -145,24 +125,20 @@
             <div class="sub">Dissertation: <em>"A Data Analysis Methodology for Process Diagnosis and Redesign in Healthcare"</em></div>
             <div class="sub">Under supervision by Prof. Minseok Song and Prof. Marco Comuzzi</div>
           </li>
-          <li>
-            B.S., Department of Technology Management, Ulsan National Institute of Science and Technology, 2013
-          </li>
+          <li>B.S., Department of Technology Management, Ulsan National Institute of Science and Technology, 2013</li>
         </ul>
       </div>
 
-      <!-- PROFESSIONAL EXPERIENCES -->
       <div class="info-block">
         <h2>Professional Experiences</h2>
         <ul class="info-list">
-          <li>Assistant Professor, School of Information Convergence, Kwangwoon University <span class="sub" style="display:inline;color:#999;">(2021 ~ present)</span></li>
-          <li>Senior Researcher, Research Institute of Industry and SME Strategy, Korea Institute of Industrial Technology <span class="sub" style="display:inline;color:#999;">(2019 ~ 2021)</span></li>
-          <li>Postdoctoral Researcher, Department of Industrial and Management Engineering, Pohang University of Science and Technology <span class="sub" style="display:inline;color:#999;">(2018 ~ 2019)</span></li>
+          <li>Associate Professor, School of Information Convergence, Kwangwoon University <span style="color:#999;">(2021 ~ present)</span></li>
+          <li>Senior Researcher, Research Institute of Industry and SME Strategy, Korea Institute of Industrial Technology <span style="color:#999;">(2019 ~ 2021)</span></li>
+          <li>Postdoctoral Researcher, Department of Industrial and Management Engineering, Pohang University of Science and Technology <span style="color:#999;">(2018 ~ 2019)</span></li>
           <li>Visiting Scholar, Vrije Universiteit Amsterdam (2015), Eindhoven University of Technology (2016), University of Seville (2017)</li>
         </ul>
       </div>
 
-      <!-- RESEARCH INTERESTS -->
       <div class="info-block">
         <h2>Research Interests</h2>
         <ul class="info-list">
@@ -170,10 +146,8 @@
         </ul>
       </div>
 
-      <!-- PROFESSIONAL ACTIVITIES -->
       <div class="info-block">
         <h2>Professional Activities</h2>
-
         <div class="act-group">
           <div class="act-group-title">Reviewers</div>
           <ul class="act-sub-list">
@@ -186,7 +160,6 @@
             <li>PLoS One</li>
           </ul>
         </div>
-
         <div class="act-group">
           <div class="act-group-title">Members</div>
           <ul class="act-sub-list">
@@ -194,7 +167,6 @@
             <li>Korea Intelligent Information Systems of Society</li>
           </ul>
         </div>
-
         <div class="act-group">
           <div class="act-group-title">Program Committee</div>
           <ul class="act-sub-list">
