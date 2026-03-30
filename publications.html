@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications · DA-Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pub-section { padding: 52px 0; }
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+    .filter-btn { font-size: 13px; padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border); background: #fff; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background: var(--red-dark); color: #fff; border-color: var(--red-dark); }
+
+    .year-group { margin-bottom: 40px; }
+    .year-label { font-size: 24px; font-weight: 700; color: var(--red-dark); font-family: Georgia, serif; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+
+    .pub-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #F5EAEA; align-items: flex-start; }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-num { font-size: 13px; color: var(--text-muted); font-weight: 600; min-width: 28px; padding-top: 2px; }
+    .pub-body .title { font-size: 14.5px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; line-height: 1.45; }
+    .pub-body .authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 3px; }
+    .pub-body .authors strong { color: var(--red-mid); }
+    .pub-body .venue { font-size: 13px; color: #777; font-style: italic; margin-bottom: 6px; }
+    .pub-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pub-links a { font-size: 11.5px; padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border); color: var(--red-mid); transition: background 0.2s; }
+    .pub-links a:hover { background: var(--red-light); }
+  </style>
+</head>
+<body>
+<nav></nav>
+
+<div class="page-header">
+  <div class="label">Academic Output</div>
+  <h1>Publications</h1>
+  <p>Selected research publications from DA-Lab members.</p>
+</div>
+
+<main>
+  <div class="pub-section">
+    <div class="container">
+
+      <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Journal</button>
+        <button class="filter-btn">Conference</button>
+        <button class="filter-btn">Process Mining</button>
+        <button class="filter-btn">Text Mining</button>
+        <button class="filter-btn">Industrial AI</button>
+      </div>
+
+      <!-- 2025 -->
+      <div class="year-group">
+        <div class="year-label">2025</div>
+        <div class="pub-item">
+          <div class="pub-num">1</div>
+          <div class="pub-body">
+            <div class="title">A Process Mining Approach for Clinical Pathway Optimization Using Electronic Health Records</div>
+            <div class="authors"><strong>Minsu Cho</strong>, Co-Author A, Co-Author B</div>
+            <div class="venue">Expert Systems with Applications, 2025</div>
+            <div class="pub-links">
+              <span class="tag">Journal</span>
+              <span class="tag" style="background:#EEF4FF;color:#1A4FA0;">Process Mining</span>
+              <a href="#">PDF</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">2</div>
+          <div class="pub-body">
+            <div class="title">Declarative Process Constraint Extraction from Natural Language Using Fine-Tuned Large Language Models</div>
+            <div class="authors"><strong>Minsu Cho</strong>, Student A</div>
+            <div class="venue">International Conference on Process Mining (ICPM), 2025</div>
+            <div class="pub-links">
+              <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Conference</span>
+              <span class="tag" style="background:#EEF4FF;color:#1A4FA0;">Process Mining</span>
+              <a href="#">PDF</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="year-group">
+        <div class="year-label">2024</div>
+        <div class="pub-item">
+          <div class="pub-num">3</div>
+          <div class="pub-body">
+            <div class="title">Text-Driven Process Model Discovery: Leveraging Pre-trained Language Models for Automated Workflow Extraction</div>
+            <div class="authors"><strong>Minsu Cho</strong>, Co-Author A</div>
+            <div class="venue">Information Systems, 2024</div>
+            <div class="pub-links">
+              <span class="tag">Journal</span>
+              <span class="tag" style="background:#FFF5E0;color:#8B5E00;">Text Mining</span>
+              <a href="#">PDF</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">4</div>
+          <div class="pub-body">
+            <div class="title">Anomaly Detection in Smart Manufacturing Using Multivariate Time-Series Deep Learning</div>
+            <div class="authors">Student B, <strong>Minsu Cho</strong></div>
+            <div class="venue">Journal of Manufacturing Systems, 2024</div>
+            <div class="pub-links">
+              <span class="tag">Journal</span>
+              <span class="tag" style="background:#F5F0FF;color:#5B2DAF;">Industrial AI</span>
+              <a href="#">PDF</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">5</div>
+          <div class="pub-body">
+            <div class="title">Knowledge Graph Construction from Scientific Literature in the Process Mining Domain</div>
+            <div class="authors">Student C, <strong>Minsu Cho</strong></div>
+            <div class="venue">CIKM 2024</div>
+            <div class="pub-links">
+              <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Conference</span>
+              <span class="tag" style="background:#FFF5E0;color:#8B5E00;">Text Mining</span>
+              <a href="#">PDF</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+<script src="shared.js"></script>
+<script>
+  injectNav('Publications');
+  injectFooter();
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

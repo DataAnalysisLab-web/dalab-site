@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research · DA-Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .research-section { padding: 52px 0; }
+    .research-block { margin-bottom: 56px; }
+    .research-block:last-child { margin-bottom: 0; }
+
+    .research-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .research-card-header { background: var(--red-tint); border-bottom: 1px solid var(--border); padding: 28px 32px; display: flex; align-items: center; gap: 20px; }
+    .research-card-body { padding: 28px 32px; }
+    .research-title { font-size: 22px; font-weight: 700; color: var(--red-dark); font-family: Georgia, serif; }
+    .research-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .research-desc { font-size: 14.5px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+
+    .topic-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .topic-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
+    .topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red-bright); flex-shrink: 0; margin-top: 6px; }
+
+    .collab-strip { background: var(--bg-light); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--text-muted); }
+    .collab-strip strong { color: var(--text-primary); }
+
+    @media (max-width: 768px) {
+      .topic-list { grid-template-columns: 1fr; }
+      .research-card-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav></nav>
+
+<div class="page-header">
+  <div class="label">What We Do</div>
+  <h1>Research Areas</h1>
+  <p>Our research bridges data science and real-world challenges through three core areas.</p>
+</div>
+
+<main>
+  <div class="research-section">
+    <div class="container">
+
+      <!-- PROCESS MINING -->
+      <div class="research-block">
+        <div class="research-card">
+          <div class="research-card-header">
+            <svg width="72" height="72" viewBox="0 0 64 64" style="flex-shrink:0;"><defs><radialGradient id="r1d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="r1r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="9" y1="32" x2="25" y2="14" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="32" x2="25" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="14" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="50" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="42" y1="32" x2="57" y2="32" stroke="#BB0018" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="32" r="6.5" fill="url(#r1d)"/><circle cx="25" cy="14" r="5" fill="url(#r1d)"/><circle cx="25" cy="50" r="5" fill="url(#r1d)"/><circle cx="42" cy="32" r="5.5" fill="url(#r1d)"/><circle cx="57" cy="32" r="7.5" fill="url(#r1r)"/></svg>
+            <div>
+              <div class="research-title">Process Mining &amp; Applications</div>
+              <div class="research-subtitle">Event log analysis · Process discovery · Conformance checking</div>
+            </div>
+          </div>
+          <div class="research-card-body">
+            <p class="research-desc">Process mining extracts knowledge from event logs recorded by information systems, enabling the discovery of real-world process models, conformance checking against normative models, and enhancement of existing processes. DA-Lab applies these techniques to healthcare, manufacturing, and enterprise systems.</p>
+            <div class="topic-list">
+              <div class="topic-item"><div class="topic-dot"></div>Automated process discovery from EHR and clinical data</div>
+              <div class="topic-item"><div class="topic-dot"></div>Declarative process model extraction using LLMs</div>
+              <div class="topic-item"><div class="topic-dot"></div>Conformance checking and deviation analysis</div>
+              <div class="topic-item"><div class="topic-dot"></div>Predictive process monitoring</div>
+              <div class="topic-item"><div class="topic-dot"></div>Multi-perspective process mining</div>
+              <div class="topic-item"><div class="topic-dot"></div>Process optimization in industrial settings</div>
+            </div>
+            <div class="collab-strip"><strong>Tools & Frameworks:</strong> ProM, PM4Py, Celonis, Disco · <strong>Application Domains:</strong> Healthcare, Manufacturing, Finance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXT MINING -->
+      <div class="research-block">
+        <div class="research-card">
+          <div class="research-card-header">
+            <svg width="72" height="72" viewBox="0 0 64 64" style="flex-shrink:0;"><defs><radialGradient id="r2d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="r2r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="32" y1="32" x2="32" y2="8" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="53" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="11" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><circle cx="32" cy="8" r="5" fill="url(#r2d)"/><circle cx="53" cy="20" r="5" fill="url(#r2d)"/><circle cx="50" cy="50" r="5" fill="url(#r2d)"/><circle cx="14" cy="50" r="5" fill="url(#r2d)"/><circle cx="11" cy="20" r="5" fill="url(#r2d)"/><circle cx="32" cy="32" r="9" fill="url(#r2r)"/></svg>
+            <div>
+              <div class="research-title">Text Mining &amp; Applications</div>
+              <div class="research-subtitle">NLP · Information extraction · Sentiment analysis</div>
+            </div>
+          </div>
+          <div class="research-card-body">
+            <p class="research-desc">Text mining leverages natural language processing and machine learning to extract structured knowledge from unstructured textual data. DA-Lab focuses on applying these methods to scientific literature, business documents, and social media to support decision-making and knowledge discovery.</p>
+            <div class="topic-list">
+              <div class="topic-item"><div class="topic-dot"></div>Named entity recognition and relation extraction</div>
+              <div class="topic-item"><div class="topic-dot"></div>Topic modeling and document classification</div>
+              <div class="topic-item"><div class="topic-dot"></div>Fine-tuning LLMs for domain-specific tasks</div>
+              <div class="topic-item"><div class="topic-dot"></div>Constraint extraction from natural language</div>
+              <div class="topic-item"><div class="topic-dot"></div>Sentiment and opinion analysis</div>
+              <div class="topic-item"><div class="topic-dot"></div>Knowledge graph construction</div>
+            </div>
+            <div class="collab-strip"><strong>Models:</strong> BERT, Gemma, LLaMA, GPT · <strong>Techniques:</strong> LoRA, QLoRA, RAG, Prompt Engineering</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDUSTRIAL AI -->
+      <div class="research-block">
+        <div class="research-card">
+          <div class="research-card-header">
+            <svg width="72" height="72" viewBox="0 0 64 64" style="flex-shrink:0;"><defs><radialGradient id="r3d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="r3r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="32" y1="6" x2="56" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="19" x2="56" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="45" x2="32" y2="58" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="58" x2="8" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="45" x2="8" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="19" x2="32" y2="6" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="32" x2="32" y2="6" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="32" y2="58" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><circle cx="32" cy="6" r="4.5" fill="url(#r3d)"/><circle cx="56" cy="19" r="4.5" fill="url(#r3d)"/><circle cx="56" cy="45" r="4.5" fill="url(#r3d)"/><circle cx="32" cy="58" r="4.5" fill="url(#r3d)"/><circle cx="8" cy="45" r="4.5" fill="url(#r3d)"/><circle cx="8" cy="19" r="4.5" fill="url(#r3d)"/><circle cx="32" cy="32" r="8" fill="url(#r3r)"/></svg>
+            <div>
+              <div class="research-title">Industrial Artificial Intelligence</div>
+              <div class="research-subtitle">Smart manufacturing · Anomaly detection · Predictive analytics</div>
+            </div>
+          </div>
+          <div class="research-card-body">
+            <p class="research-desc">Industrial AI applies machine learning and data analytics to manufacturing and industrial systems, enabling smarter decision-making, automated quality control, and predictive maintenance. DA-Lab collaborates with industry partners to develop practical AI solutions for real production environments.</p>
+            <div class="topic-list">
+              <div class="topic-item"><div class="topic-dot"></div>Anomaly detection in manufacturing processes</div>
+              <div class="topic-item"><div class="topic-dot"></div>Predictive maintenance with sensor data</div>
+              <div class="topic-item"><div class="topic-dot"></div>Quality control and defect detection</div>
+              <div class="topic-item"><div class="topic-dot"></div>Digital twin and simulation</div>
+              <div class="topic-item"><div class="topic-dot"></div>Supply chain optimization</div>
+              <div class="topic-item"><div class="topic-dot"></div>Human-robot collaboration analytics</div>
+            </div>
+            <div class="collab-strip"><strong>Techniques:</strong> Deep Learning, Time-series Analysis, Computer Vision · <strong>Domains:</strong> Electronics, Semiconductor, Automotive</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+<script src="shared.js"></script>
+<script>injectNav('Research'); injectFooter();</script>
+</body>
+</html>

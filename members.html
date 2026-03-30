@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members · DA-Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .members-section { padding: 52px 0; }
+    .member-group { margin-bottom: 48px; }
+    .member-group-title { font-size: 13px; font-weight: 700; color: var(--red-mid); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px; }
+
+    /* Professor card */
+    .prof-card { display: flex; gap: 32px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 32px; }
+    .prof-avatar { width: 110px; height: 110px; border-radius: 50%; background: var(--bg-light); border: 3px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .prof-avatar svg { width: 60px; height: 60px; opacity: 0.4; }
+    .prof-info h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); font-family: Georgia, serif; margin-bottom: 4px; }
+    .prof-info .title { font-size: 13px; color: var(--red-mid); font-weight: 600; margin-bottom: 12px; }
+    .prof-info .bio { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; max-width: 540px; }
+    .prof-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .prof-links a { font-size: 12.5px; color: var(--red-mid); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; transition: background 0.2s; }
+    .prof-links a:hover { background: var(--red-light); }
+
+    /* Student cards */
+    .students-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .student-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: box-shadow 0.2s; }
+    .student-card:hover { box-shadow: 0 4px 16px rgba(62,0,8,0.07); border-color: #D4A0A0; }
+    .student-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--bg-light); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 24px; color: var(--red-dark); font-weight: 700; font-family: Georgia, serif; }
+    .student-name { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .student-degree { font-size: 12px; color: var(--red-mid); font-weight: 600; margin-bottom: 6px; }
+    .student-topic { font-size: 12px; color: #777; line-height: 1.55; }
+
+    .alumni-list { display: flex; flex-direction: column; gap: 0; }
+    .alumni-row { display: flex; align-items: center; gap: 16px; padding: 13px 0; border-bottom: 1px solid #F5EAEA; font-size: 13.5px; }
+    .alumni-row:last-child { border-bottom: none; }
+    .alumni-name { font-weight: 600; color: var(--text-primary); width: 160px; flex-shrink: 0; }
+    .alumni-degree { color: var(--red-mid); width: 80px; flex-shrink: 0; font-size: 12px; font-weight: 600; }
+    .alumni-year { color: var(--text-muted); width: 60px; flex-shrink: 0; font-size: 12px; }
+    .alumni-current { color: var(--text-secondary); font-size: 12.5px; }
+
+    @media (max-width: 768px) {
+      .prof-card { flex-direction: column; }
+      .students-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav></nav>
+
+<div class="page-header">
+  <div class="label">People</div>
+  <h1>Lab Members</h1>
+  <p>Meet the researchers and students of DA-Lab.</p>
+</div>
+
+<main>
+  <div class="members-section">
+    <div class="container">
+
+      <!-- PROFESSOR -->
+      <div class="member-group">
+        <div class="member-group-title">Principal Investigator</div>
+        <div class="prof-card">
+          <div class="prof-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8B0018" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div class="prof-info">
+            <h2>Minsu Cho</h2>
+            <div class="title">Assistant Professor · School of Information Convergence, Kwangwoon University</div>
+            <p class="bio">Prof. Minsu Cho leads the Data Analytics Lab. His research focuses on process mining, text analytics, and industrial AI. He is particularly interested in bridging the gap between data science methodologies and practical real-world challenges in healthcare, manufacturing, and enterprise systems.</p>
+            <div class="prof-links">
+              <a href="mailto:mcho@kw.ac.kr">Email</a>
+              <a href="#" target="_blank">Google Scholar</a>
+              <a href="#" target="_blank">ResearchGate</a>
+              <a href="#" target="_blank">DBLP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PhD STUDENTS -->
+      <div class="member-group">
+        <div class="member-group-title">Ph.D. Students</div>
+        <div class="students-grid">
+          <div class="student-card">
+            <div class="student-avatar">K</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">Ph.D. Candidate</div>
+            <div class="student-topic">Process Mining · Healthcare Pathway Analysis</div>
+          </div>
+          <div class="student-card">
+            <div class="student-avatar">L</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">Ph.D. Student</div>
+            <div class="student-topic">Text Mining · NLP for Process Discovery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MS STUDENTS -->
+      <div class="member-group">
+        <div class="member-group-title">M.S. Students</div>
+        <div class="students-grid">
+          <div class="student-card">
+            <div class="student-avatar">P</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">M.S. Student</div>
+            <div class="student-topic">Industrial AI · Predictive Maintenance</div>
+          </div>
+          <div class="student-card">
+            <div class="student-avatar">C</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">M.S. Student</div>
+            <div class="student-topic">Process Mining · Conformance Checking</div>
+          </div>
+          <div class="student-card">
+            <div class="student-avatar">J</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">M.S. Student</div>
+            <div class="student-topic">Text Analytics · Information Extraction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNDERGRAD -->
+      <div class="member-group">
+        <div class="member-group-title">Undergraduate Researchers</div>
+        <div class="students-grid">
+          <div class="student-card">
+            <div class="student-avatar">A</div>
+            <div class="student-name">Placeholder Name</div>
+            <div class="student-degree">Undergraduate</div>
+            <div class="student-topic">Data Analytics · ML Applications</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALUMNI -->
+      <div class="member-group">
+        <div class="member-group-title">Alumni</div>
+        <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:8px 24px;">
+          <div class="alumni-list">
+            <div class="alumni-row">
+              <span class="alumni-name">Placeholder Name</span>
+              <span class="alumni-degree">M.S. 2024</span>
+              <span class="alumni-year">2024</span>
+              <span class="alumni-current">→ Industry Position</span>
+            </div>
+            <div class="alumni-row">
+              <span class="alumni-name">Placeholder Name</span>
+              <span class="alumni-degree">M.S. 2023</span>
+              <span class="alumni-year">2023</span>
+              <span class="alumni-current">→ Industry Position</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+<script src="shared.js"></script>
+<script>injectNav('Members'); injectFooter();</script>
+</body>
+</html>

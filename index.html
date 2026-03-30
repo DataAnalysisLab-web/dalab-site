@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA-Lab · Data Analytics Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HOME-SPECIFIC */
+    .welcome { background: #fff; padding: 56px 48px; display: flex; align-items: center; gap: 40px; border-bottom: 1px solid var(--border); }
+    .welcome-text { flex: 1; }
+    .welcome-label { font-size: 11px; color: #AAA; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; }
+    .welcome-h1 { font-size: 40px; font-weight: 700; color: var(--text-primary); line-height: 1.15; margin-bottom: 18px; font-family: Georgia, serif; }
+    .welcome-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; max-width: 480px; }
+
+    .strip { background: var(--bg-light); border-bottom: 1px solid var(--border); padding: 32px 48px; }
+    .strip-grid { display: flex; justify-content: center; gap: 72px; }
+    .strip-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .strip-item span { font-size: 13px; font-weight: 600; color: var(--red-dark); }
+
+    .news-section { padding: 48px 0; }
+    .news-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #F5EAEA; }
+    .news-item:last-child { border-bottom: none; }
+    .news-body .title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; line-height: 1.4; }
+    .news-body .date  { font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; }
+    .news-body .desc  { font-size: 12.5px; color: #666; line-height: 1.55; }
+
+    .research-section { background: var(--red-tint); padding: 48px 0; }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .r-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 18px; text-align: center; transition: box-shadow 0.2s, border-color 0.2s; }
+    .r-card:hover { border-color: #D4A0A0; box-shadow: 0 4px 16px rgba(62,0,8,0.07); }
+    .r-card .ct { font-size: 14px; color: var(--red-dark); font-weight: 700; margin: 12px 0 6px; }
+    .r-card .cd { font-size: 12px; color: #666; line-height: 1.65; }
+
+    @media (max-width: 768px) {
+      .welcome { flex-direction: column; padding: 36px 20px; }
+      .strip { padding: 24px 20px; }
+      .strip-grid { gap: 32px; }
+      .news-section, .research-section .container { padding: 32px 0; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav></nav>
+
+<!-- WELCOME -->
+<section class="welcome">
+  <div class="welcome-text">
+    <p class="welcome-label">Welcome to</p>
+    <h1 class="welcome-h1">Data Analytics Lab.</h1>
+    <p class="welcome-desc">DA Lab. bridges the gap between data science and practical real-world challenges. Our research focuses on process innovation and text analytics based on process mining, machine learning, and natural language processing.<br><br>School of Information Convergence, Kwangwoon University.</p>
+  </div>
+  <svg width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0;">
+    <defs>
+      <radialGradient id="ld" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient>
+      <radialGradient id="lr" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient>
+    </defs>
+    <line x1="36" y1="62" x2="100" y2="26" stroke="#6B0010" stroke-width="2.8" stroke-linecap="round" opacity="0.8"/>
+    <line x1="36" y1="62" x2="24" y2="140" stroke="#6B0010" stroke-width="2.8" stroke-linecap="round" opacity="0.8"/>
+    <line x1="112" y1="115" x2="100" y2="26" stroke="#8B0018" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="112" y1="115" x2="36" y2="62" stroke="#8B0018" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="112" y1="115" x2="24" y2="140" stroke="#8B0018" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="112" y1="115" x2="174" y2="105" stroke="#8B0018" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="112" y1="115" x2="156" y2="170" stroke="#8B0018" stroke-width="3.2" stroke-linecap="round"/>
+    <circle cx="112" cy="115" r="28" fill="#FF0000" opacity="0.07"/>
+    <circle cx="112" cy="115" r="22" fill="#FF0000" opacity="0.13"/>
+    <circle cx="100" cy="26" r="22" fill="url(#ld)"/>
+    <circle cx="36" cy="62" r="22" fill="url(#ld)"/>
+    <circle cx="24" cy="140" r="22" fill="url(#ld)"/>
+    <circle cx="174" cy="105" r="17" fill="url(#ld)"/>
+    <circle cx="156" cy="170" r="17" fill="url(#ld)"/>
+    <circle cx="112" cy="115" r="21" fill="url(#lr)"/>
+  </svg>
+</section>
+
+<!-- RESEARCH STRIP -->
+<section class="strip">
+  <div class="strip-grid">
+    <div class="strip-item">
+      <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="s1d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="s1r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
+        <line x1="9" y1="32" x2="25" y2="14" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="32" x2="25" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="14" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="50" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="42" y1="32" x2="57" y2="32" stroke="#BB0018" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="9" cy="32" r="6.5" fill="url(#s1d)"/><circle cx="25" cy="14" r="5" fill="url(#s1d)"/><circle cx="25" cy="50" r="5" fill="url(#s1d)"/><circle cx="42" cy="32" r="5.5" fill="url(#s1d)"/><circle cx="57" cy="32" r="7.5" fill="url(#s1r)"/>
+      </svg>
+      <span>Process Mining</span>
+    </div>
+    <div class="strip-item">
+      <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="s2d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="s2r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
+        <line x1="32" y1="32" x2="32" y2="8" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="53" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="11" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="32" cy="8" r="5" fill="url(#s2d)"/><circle cx="53" cy="20" r="5" fill="url(#s2d)"/><circle cx="50" cy="50" r="5" fill="url(#s2d)"/><circle cx="14" cy="50" r="5" fill="url(#s2d)"/><circle cx="11" cy="20" r="5" fill="url(#s2d)"/><circle cx="32" cy="32" r="9" fill="url(#s2r)"/>
+      </svg>
+      <span>Text Mining</span>
+    </div>
+    <div class="strip-item">
+      <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="s3d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="s3r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
+        <line x1="32" y1="6" x2="56" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="19" x2="56" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="45" x2="32" y2="58" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="58" x2="8" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="45" x2="8" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="19" x2="32" y2="6" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="32" y1="32" x2="32" y2="6" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="32" y2="58" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <circle cx="32" cy="6" r="4.5" fill="url(#s3d)"/><circle cx="56" cy="19" r="4.5" fill="url(#s3d)"/><circle cx="56" cy="45" r="4.5" fill="url(#s3d)"/><circle cx="32" cy="58" r="4.5" fill="url(#s3d)"/><circle cx="8" cy="45" r="4.5" fill="url(#s3d)"/><circle cx="8" cy="19" r="4.5" fill="url(#s3d)"/><circle cx="32" cy="32" r="8" fill="url(#s3r)"/>
+      </svg>
+      <span>Industrial AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<main>
+  <div style="padding: 48px 0;" class="">
+    <div class="container">
+      <div class="section-label">Recent News from DA-Lab</div>
+      <div class="news-item">
+        <span class="tag">Publication</span>
+        <div class="news-body"><div class="title">New paper accepted to Expert Systems with Applications</div><div class="date">2025 · Minsu Cho et al.</div><div class="desc">A process mining approach for analyzing EHR data to support clinical pathway optimization in hospital workflows.</div></div>
+      </div>
+      <div class="news-item">
+        <span class="tag">Publication</span>
+        <div class="news-body"><div class="title">Declarative constraint extraction from text using fine-tuned LLMs</div><div class="date">2025 · DA-Lab</div><div class="desc">Leveraging Gemma 7B with LoRA fine-tuning to automatically extract Declare process constraints from natural language.</div></div>
+      </div>
+      <div class="news-item">
+        <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Recruiting</span>
+        <div class="news-body"><div class="title">DA Lab. is looking for highly motivated students</div><div class="date">2025 · DA-Lab</div><div class="desc">Recruiting undergraduate and graduate students interested in process mining, machine learning, and AI. Contact: mcho@kw.ac.kr</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH CARDS -->
+  <section style="background: var(--red-tint); padding: 48px 0;">
+    <div class="container">
+      <div class="section-label">Research Areas</div>
+      <div class="cards-grid">
+        <div class="r-card"><svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c1d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c1r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="9" y1="32" x2="25" y2="14" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="32" x2="25" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="14" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="50" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="42" y1="32" x2="57" y2="32" stroke="#BB0018" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="32" r="6.5" fill="url(#c1d)"/><circle cx="25" cy="14" r="5" fill="url(#c1d)"/><circle cx="25" cy="50" r="5" fill="url(#c1d)"/><circle cx="42" cy="32" r="5.5" fill="url(#c1d)"/><circle cx="57" cy="32" r="7.5" fill="url(#c1r)"/></svg><div class="ct">Process Mining</div><div class="cd">Discovering process models from event logs and optimizing real-world workflows with data-driven insights.</div></div>
+        <div class="r-card"><svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c2d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c2r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="32" y1="32" x2="32" y2="9" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="53" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="11" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><circle cx="32" cy="9" r="5.5" fill="url(#c2d)"/><circle cx="53" cy="20" r="5.5" fill="url(#c2d)"/><circle cx="50" cy="50" r="5.5" fill="url(#c2d)"/><circle cx="14" cy="50" r="5.5" fill="url(#c2d)"/><circle cx="11" cy="20" r="5.5" fill="url(#c2d)"/><circle cx="32" cy="32" r="9" fill="url(#c2r)"/></svg><div class="ct">Text Mining</div><div class="cd">Extracting meaningful knowledge from unstructured text using NLP and machine learning methods.</div></div>
+        <div class="r-card"><svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c3d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c3r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs><line x1="32" y1="6" x2="56" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="19" x2="56" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="45" x2="32" y2="58" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="58" x2="8" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="45" x2="8" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="19" x2="32" y2="6" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="32" x2="32" y2="6" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="32" y2="58" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><circle cx="32" cy="6" r="4.5" fill="url(#c3d)"/><circle cx="56" cy="19" r="4.5" fill="url(#c3d)"/><circle cx="56" cy="45" r="4.5" fill="url(#c3d)"/><circle cx="32" cy="58" r="4.5" fill="url(#c3d)"/><circle cx="8" cy="45" r="4.5" fill="url(#c3d)"/><circle cx="8" cy="19" r="4.5" fill="url(#c3d)"/><circle cx="32" cy="32" r="8" fill="url(#c3r)"/></svg><div class="ct">Industrial AI</div><div class="cd">Applying AI and machine learning to industrial processes and smart manufacturing systems.</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer></footer>
+<script src="shared.js"></script>
+<script>injectNav('Home'); injectFooter();</script>
+</body>
+</html>
