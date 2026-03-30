@@ -1,1028 +1,4 @@
 
-혹시 사이트 링크 주면 전체 사이트가 어떤 구조인지 파악해줄 수 있어?
-
-3월 29일
-
-웹 페칭으로 사이트 구조 분석 가능함을 인지했다
-웹 페칭으로 사이트 구조 분석 가능함을 인지했다
-네, 가능합니다! web_fetch 도구로 해당 URL의 내용을 가져와서 분석할 수 있어요.
-
-다만 몇 가지 한계는 있습니다:
-
-로그인이 필요한 페이지는 접근 불가
-JavaScript로만 렌더링되는 SPA (React/Vue 앱 등)는 초기 HTML만 보여서 구조 파악이 제한적일 수 있음
-대형 사이트는 모든 페이지를 순회하긴 어렵고, 주요 페이지 위주로 샘플링해서 파악
-링크 주시면 바로 분석해 드릴게요!
-
-https://sites.google.com/view/minsucho 이거 확인해줄 수 있어?
-
-3월 29일
-
-추가 페이지를 수집하여 포괄적 정보 제공 준비
-추가 페이지를 수집하여 포괄적 정보 제공 준비
-바로 확인했습니다! 광운대학교 Data Analytics Lab. 사이트네요.
-
-사이트 구조 요약
-사이트명: Data Analytics Lab. (DA Lab.)
-소속: 광운대학교 정보융합학부 (School of Information Convergence)
-운영자: Minsu Cho (조민수) 교수 — mcho@kw.ac.kr
-
-페이지 구성 (6개 메뉴)
-메뉴	URL	내용 추정
-Home	/home	랩 소개, 연구분야, 공지
-Members	/members	지도교수 및 학생 구성원
-Research Area	/research-area	세부 연구 주제
-Publications	/publications	논문 목록
-Teaching	/teaching	강의 과목
-Contacts	/contacts	연락처
-연구 분야 (홈 기준)
-Process Mining and its Applications
-Text Mining and its Applications
-Industrial Artificial Intelligence
-특이사항
-Google Sites로 제작된 학술 랩 홈페이지
-대학원생 및 학부생 모집 중이라는 공지 포함
-특정 하위 페이지 내용이 더 궁금하시면 각 URL 드리면 추가로 확인해 드릴 수 있어요!
-혹시 특정 페이지(예: Publications, Members 등) 내용도 봐드릴까요?
-
-KakaoTalk_Photo_2026-03-29-19-55-08.png
-KakaoTalk_Photo_2026-03-29-19-56-25.jpeg
-디자인을 좀 많이 수정 하려고 하는데 맨 위 header 부분 이미지랑 전체적으로 조금 바꾸려고 하는데 어떻게 바꾸는게 좋을 까? 추천해줄 수 있어?
-
-일단 아이디어가 첫 페이지에서 전체적으로 우리 연구실이 뭘 하는 연구실인지 한 눈에 볼  수 있게 디자인을 하려고 하고 맨위 header 부분 이미지랑 색상을 바꾸려고하는데 추천 해줄 수 있어?
-
-아니면 전체적으로 바꾸고 이미지를 줄 수 있어 홈 페이지 관련 부분에 대해서?
-
-research area는 결국 각 주제에 대해 이미지를 하나식 보이려고 하는데 이미지 생성 해줄 수 있어? 두번째 이미지는 process mining 관련 로고를 인터넷에서 가져온건데 이거는 그냥 참고를 하고 각 연구 주제별 로고를 만드려고 하는데 어떻게 하는게 좋을지 알려줘
-
-전체 랩실 로고는 처음에 준 이미지 느낌으로 할 생각이야
-
-3월 29일
-
-디자인 개선안과 실용적 제안을 종합했습니다
-디자인 개선안과 실용적 제안을 종합했습니다
-좋아요! 두 가지로 나눠서 도와드릴게요 — ① 디자인 방향 추천 + ② 연구 주제별 아이콘 SVG 제작.
-
-좋아요! 디자인 방향을 제시하고, 연구 주제별 아이콘과 홈페이지 목업을 바로 만들어 드릴게요.
-
-DA-Lab 로고의 핵심 정체성(다크 크림슨 + 브라이트 레드 네트워크 노드)을 그대로 살리면서, 각 연구 주제마다 다른 네트워크 위상(topology)으로 차별화했습니다. Process Mining은 fork-join 흐름, Text Mining은 허브-스포크 구조, Industrial AI는 육각형 메시 구조로 표현했어요.
-
-먼저 세 가지 연구 주제 아이콘입니다:
-
-
-
-이제 이 아이콘들을 활용한 전체 홈페이지 디자인 목업입니다:
-
-
-
-디자인 방향 요약 및 실용 팁
-색상 체계: 다크 크림슨 
-#3E0008을 히어로/헤더 배경으로, 브라이트 레드 
-#CC0020을 CTA 버튼과 강조 포인트로 사용합니다. 흰 배경 + 연한 크림슨 tint(
-#FBF6F6) 조합이 전문적이면서 연구실 identity를 유지합니다.
-
-아이콘 철학: 세 아이콘 모두 동일한 시각 언어(다크 크림슨 구체 노드)를 공유하되, 위상(topology)으로 차별화했습니다. Process Mining은 fork-join 흐름(프로세스 발견), Text Mining은 허브-스포크(중앙 분석), Industrial AI는 육각형 메시(체계적 제어)입니다.
-
-Google Sites 제약 사항: Google Sites는 커스텀 HTML/CSS를 직접 삽입하기 어렵기 때문에, 실제 구현 시 몇 가지 접근법이 있습니다. 이미지(PNG/SVG 파일)로 아이콘을 삽입하는 것이 가장 간단하고, 히어로 배경은 Canva나 Figma에서 제작한 이미지를 배너로 넣는 방식을 추천합니다. 만약 더 자유로운 디자인을 원하신다면 GitHub Pages나 Notion 기반 사이트로 이전하는 것도 검토해볼 만합니다.
-
-다음 단계: 아이콘 SVG 코드를 파일로 추출해 드릴 수 있고, 각 연구 주제별 상세 페이지(Research Area 하위 페이지) 디자인도 만들 수 있습니다. 어떤 방향으로 진행하고 싶으신가요?
-
-스크린샷 2026-03-29 오후 8.15.43.png
-혹시 내가 준 로고를 너가 만든 로고 형식에 맞게 크기를 키워서 줄 수 있어?
-너가 준거에서 가장 마음에 드는 부분이 위에 로고랑 Home을 눌렀을 때의 색상 부분이야. 
-그래서 맨 위 부분은 그대로 갈건데 로고는 내가 준 로고 디자인 그대로 갔으면 좋겠고
-https://mli.kaist.ac.kr/ 이 사이트 참고를 해서
-
-3월 29일
-
-로고 크기 조정 및 디자인 통합 검토 중
-로고 크기 조정 및 디자인 통합 검토 중
-Claude의 응답이 중단되었습니다
-스크린샷 2026-03-29 오후 8.15.43.png
-혹시 내가 준 로고를 너가 만든 로고 형식에 맞게 크기를 키워서 줄 수 있어? 너가 준거에서 가장 마음에 드는 부분이 위에 로고랑 Home을 눌렀을 때의 색상 부분이야.  그래서 맨 위 부분은 그대로 갈건데 로고는 내가 준 로고 디자인 그대로 갔으면 좋겠고 중간 내가 지금 캡쳐해서 올린 이 부분은 안 쓸거야. 
- __https://mli.kaist.ac.kr/__ 이 사이트 참고를 해서 중간 부분을 어떻게 하면 좋을지 알려주고 
-너가 준 footer 부분도 괜찮은데 내가 참고하라는 사이트 느낌으로 줄 수 있어?
-
-내가 캡쳐 한 부분은 새로운 이미지를 생성할 필요는 없어 
-
-사이트에서 
-https://sites.google.com/view/minsucho
-에서 내용은 그대로 들어가는데 위치 형태는 바꿔도 돼.
-
-중간에 research Area 부분은 괜찮고 
-footer부분을 수정해주고 캡처한 부분은 빼고 어떤 이미지를 넣는게 좋을지 알려줘
-
-더 보기
-3월 29일
-
-디자인 수정사항과 이미지 추천안을 검토했다
-디자인 수정사항과 이미지 추천안을 검토했다
-네, 명확하게 이해했어요! 정리하면:
-
-상단 nav: 유지 (색상, 형태)
-히어로 배너 (다크 크림슨 섹션): 제거
-중간부분: KAIST MLI 사이트 스타일 참고해서 새로 구성
-Research Area 카드: 유지
-Footer: KAIST MLI 스타일로 수정
-로고: 원래 이미지 스타일 SVG로 크게 재현
-먼저 KAIST MLI 구조를 확인했으니 바로 전체 목업 만들어 드릴게요.
-
-
-
-중간 이미지 추천 및 구현 가이드
-Welcome 섹션 (현재 SVG 로고가 있는 위치): KAIST MLI처럼 이미지 없이 깔끔하게 가는 방법도 좋지만, 이미지를 넣는다면 이 세 가지 중 하나를 추천해요.
-
-옵션 A — 교수님 또는 랩 단체 사진 (가장 일반적, academic 느낌): Welcome 텍스트 오른쪽에 원형 또는 정사각형 크롭 프로필 사진. 사람 중심의 랩 Identity를 강조할 수 있어요.
-
-옵션 B — 연구 관련 추상 이미지 (지금 SVG 로고 자리): 지금처럼 DA-Lab 로고 SVG를 크게 유지하는 방법이 가장 자연스럽고, 별도 이미지 제작이 필요 없어서 추천해요.
-
-옵션 C — 학교/연구실 공간 사진: 광운대 캠퍼스나 연구실 공간 사진을 가로형으로 배치. KAIST MLI처럼 "장소 기반" 신뢰감을 줄 수 있어요.
-
-Google Sites 구현 팁: 이 목업을 직접 Google Sites에 구현하려면 섹션별로 이렇게 하면 돼요. Nav 색상은 Sites의 테마 색상에서 
-#3E0008로 설정, Welcome 섹션은 흰 배경 + 텍스트 블록 + 이미지 블록(오른쪽 정렬), Research 아이콘들은 PNG로 내보낸 후 이미지 삽입, Footer는 Sites의 Footer 영역 + 텍스트 블록으로 구성하면 됩니다. SVG 아이콘들은 PNG로 내보내 드릴 수 있어요 — 필요하시면 말씀해 주세요!
-
-스크린샷 2026-03-29 오후 8.32.47.png
-이거를 로고로 쓰려고하는데  이거 그대로 해서 로고로 해주고 
-footer 부분은 조금 더 옆으로 길게 그리고 세로 부분은 작게 해서 다시 줄 수 있어? 그리고 Home에서 아래 빨간 짝대기는 빼주고
-
-3월 29일
-
-로고 재구성 및 네비게이션 스타일 조정 계획 수립
-로고 재구성 및 네비게이션 스타일 조정 계획 수립
-
-
-변경사항 요약:
-
-로고: 업로드하신 이미지를 분석해서 6개 노드(Top, Upper-left, Left + Center 빨간 구 + Right, Lower-right) 구조를 SVG로 재현했어요. 외곽 3개 노드끼리 연결되는 선과 Center에서 뻗어나가는 5개 선의 구조, 글로우 효과까지 반영했습니다. Nav, Welcome 섹션, Footer 세 곳 모두 동일한 구조로 들어가 있어요.
-
-Home 밑 빨간 줄: 제거했습니다. 활성 탭은 흰색 bold 처리만 유지했어요.
-
-Footer: 세로 높이를 대폭 줄이고(padding 44px→24px), 가로로 넓게 퍼지도록 Brand + 구분선 + 3컬럼 구조로 재배치했습니다.
-
-그럼 이 사이트가 site.google 포멧에 맞게 할 수 있는거야?
-
-3월 29일
-
-사용자의 Google Sites 호환성 질문을 검토했다
-사용자의 Google Sites 호환성 질문을 검토했다
-솔직하게 말씀드리면 부분적으로만 가능해요.
-
-Google Sites에서 구현 가능한 것
-기본 색상 테마 (다크 크림슨 계열)
-네비게이션 메뉴 항목과 순서
-섹션별 텍스트 내용 (Welcome 문구, News, 연락처 등)
-이미지 삽입 (로고 PNG 파일로 업로드)
-3단 카드 레이아웃 (Google Sites의 "3열" 섹션)
-Footer 텍스트 정보
-Google Sites에서 구현 어려운 것
-로고 SVG 애니메이션/글로우 효과 → PNG로 내보내면 정적 이미지로는 가능
-픽셀 단위 정밀한 레이아웃 → Google Sites는 드래그앤드롭 기반이라 자유도 낮음
-커스텀 CSS/HTML → 삽입 불가 (Google Workspace 계정 없이는)
-Footer 세부 디자인 → Google Sites Footer는 매우 제한적
-Research strip 아이콘 정렬 → 제한적으로만 가능
-실용적인 대안
-가장 현실적인 방법을 추천드리면:
-
-옵션 A — Google Sites 그대로 사용: 제가 만든 디자인을 "참고용"으로 두고, Google Sites 테마 색상만 크림슨으로 맞추고 로고를 PNG로 업로드. 완성도는 낮아지지만 유지보수가 쉬움.
-
-옵션 B — GitHub Pages로 이전: 제가 만든 HTML/CSS 코드를 그대로 올리면 100% 구현 가능. 무료이고 학술 랩 사이트로 많이 사용. 도메인도 minsucho.github.io 형태로 자동 생성됨.
-
-옵션 C — Notion 기반: Notion 페이지 + Super.so 같은 서비스로 커스텀 도메인 연결. Google Sites보다 디자인 자유도 높음.
-
-GitHub Pages 쪽으로 가시면 제가 지금까지 만든 목업을 실제 배포 가능한 HTML 파일로 바로 변환해 드릴 수 있어요. 어떤 방향으로 가실 생각이세요?
-
-google.site에서 할 수 있게 수정해줄 수 있어? 디자인 포멧을?
-
-3월 29일
-
-Google Sites 제약에 맞춰 디자인을 재구성하는 방법을 고안했다
-Google Sites 제약에 맞춰 디자인을 재구성하는 방법을 고안했다
-Google Sites에서는 HTML 삽입(Embed) 기능을 활용하면 상당히 가깝게 구현할 수 있어요! 각 섹션을 HTML 코드 블록으로 넣는 방식입니다.
-
-전략은 이렇습니다:
-
-로고 + 네비 → Google Sites 기본 설정으로
-각 콘텐츠 섹션 → "삽입 > HTML 삽입"으로 붙여넣기
-바로 붙여넣을 수 있는 HTML 파일로 만들어 드릴게요.
-
-
-명령 실행함, 파일 읽음
-명령 실행함, 파일 읽음
-이 파일을 다운로드하시면 Google Sites에 붙여넣을 코드 5개가 모두 정리되어 있어요.
-
-적용 순서 요약:
-
-Google Sites 테마 색상 → 
-#3E0008 설정
-파일 섹션 1의 SVG 코드로 로고 PNG 만들어서 업로드
-헤더에 "Data Analytics Lab." 제목 입력
-섹션 2~5 코드를 순서대로 삽입 → HTML 삽입으로 붙여넣기
-한 가지 주의할 점은, 편집 모드에서는 HTML 삽입 블록이 회색 박스로만 보이고 게시 후에 실제 디자인이 보입니다. 궁금한 부분 있으면 알려주세요!
-
-Dalab google sites embeds
-코드 · HTML 
-Windows Powershell에서 Ctrl+V로 copy 명령어가 잘 안 먹어. 어떻게 하면 쉽게 복사할 수 있어?
-
-오전 9:05
-
-PowerShell 복사 붙여넣기 문제 해결 방법 검토했습니다
-PowerShell 복사 붙여넣기 문제 해결 방법 검토했습니다
-PowerShell에서 붙여넣기가 안 될 때 해결법이 몇 가지 있어요.
-
-가장 빠른 해결법
-마우스 우클릭 → 자동으로 붙여넣기 됩니다. PowerShell에서는 우클릭이 기본 붙여넣기 단축키예요.
-
-Ctrl+V 되도록 설정 변경
-PowerShell 창 상단 제목 표시줄에서 우클릭 → 속성 으로 들어가세요.
-
-"옵션" 탭에서 Ctrl 키 바로 가기 사용 체크박스를 켜면 됩니다.
-
-이후부터 Ctrl+V로 붙여넣기 가능해요.
-
-Windows Terminal 사용 추천
-지금 기본 PowerShell 창을 쓰고 계신다면 Windows Terminal로 바꾸는 걸 추천해요. Microsoft Store에서 무료로 설치할 수 있고:
-
-Ctrl+V 기본 지원
-Ctrl+C 복사도 바로 됨
-탭 여러 개, 폰트/색상 커스텀 등 훨씬 편리함
-PowerShell, CMD, WSL을 한 창에서 전환 가능
-CAIO 업무로 Claude Code나 각종 CLI 도구 쓰실 때도 Windows Terminal이 훨씬 쾌적합니다.
-
-1774859571131_image.png
-이거 만들어준거를 site.google 포멧에 적용할 수 있게 수정해줄 수 있어?
-
-오후 5:33
-
-Google Sites 적용을 위해 HTML 구조와 제약사항을 분석했다
-Google Sites 적용을 위해 HTML 구조와 제약사항을 분석했다
-캡처 화면 보니 디자인이 완성도 높게 잘 적용됐네요! 이제 이걸 Google Sites에 넣는 방법을 단계별로 정리해 드릴게요.
-
-
-
-가장 중요한 포인트는 삽입 → 삽입 코드 경로인데, 이전에 드린 HTML 파일(dalab_google_sites_embeds.html)에 섹션별 코드가 모두 들어 있으니 그걸 그대로 쓰시면 됩니다.
-
-혹시 특정 섹션 코드를 다시 찾기 어려우시면 말씀해 주세요. 각 섹션 코드만 따로 꺼내 드릴 수 있어요!
-
-하는 방법을 영어로 해줄 수 있어? 조금 구체적으로 알려줘
-
-오후 5:38
-
-사용자가 영어로 된 구체적인 가이드를 요청했음을 파악했다
-사용자가 영어로 된 구체적인 가이드를 요청했음을 파악했다
-
-
-The most common issue you'll run into is height adjustment — since Google Sites embed blocks don't auto-resize, you'll need to tweak the height after publishing until each section fits perfectly. Usually takes 1–2 tries per section.
-
-If you get stuck on any specific step, let me know which one and I'll walk you through it!
-
-1774860151809_image.png
-스크린샷 2026-03-30 오후 5.42.29.png
-혹시 맨 처음부터 너가 알려준거 없다고 가정하고 구체적으로 어떻게 하면 좋을지 알려줄 수 있어? 현재 이 화면 까지 해놨어
-
-오후 5:42
-
-지침을 검토하고 요약 작성을 준비했다
-지침을 검토하고 요약 작성을 준비했다
-현재 화면에서 my_theme이 이미 선택되어 있고 색상도 맞네요! 여기서부터 시작하면 됩니다.
-
-
-
-지금 화면 기준으로 바로 다음 할 일은:
-
-"Enter site name" 클릭해서 이름 입력
-큰 헤더 클릭 → Header type → Title only 로 축소
-Insert → Embed → Embed code 로 섹션 2부터 하나씩 붙여넣기
-Publish 눌러서 확인
-막히는 단계 있으면 스크린샷 찍어서 올려주시면 바로 해결해 드릴게요!
-
-3번까지 했는데 4번 로고 만드는 걸 어떻게 하지?
-
-오후 5:50
-
-SVG를 PNG로 변환하는 가장 간단한 방법을 모색했다
-SVG를 PNG로 변환하는 가장 간단한 방법을 모색했다
-가장 쉬운 방법으로 알려드릴게요! 별도 변환 사이트 필요 없이 바로 저장할 수 있어요.
-
-
-파일 생성됨, 파일 읽음
-파일 생성됨, 파일 읽음
-이 파일을 다운로드 받으신 다음 이렇게 하시면 됩니다:
-
-① 파일을 Chrome으로 열기 다운로드된 dalab_logo_save.html 파일을 더블클릭 → Chrome에서 열림
-
-② 로고 이미지 우클릭 → 다른 이름으로 이미지 저장 로고 위에서 마우스 우클릭 → 다른 이름으로 이미지 저장 → dalab_logo.png 로 저장
-
-③ Google Sites에 업로드 Google Sites 편집 화면 → 사이트 이름 왼쪽 아이콘 자리 클릭 → 이미지 업로드 → 방금 저장한 PNG 선택
-
-혹시 Chrome에서 우클릭해도 "이미지 저장" 옵션이 안 보이면 말씀해 주세요!
-
-Dalab logo save
-코드 · HTML 
-스크린샷 2026-03-30 오후 5.57.53.png
-svg  복사까지 했는데 여기서 어떻게 해야돼? 파일을 올리라고 나오는데
-
-오후 5:58
-
-SVG 파일로 저장하거나 HTML 방식 사용 권장
-SVG 파일로 저장하거나 HTML 방식 사용 권장
-Cloudconvert는 파일 업로드 방식이라 복잡해요. 더 쉬운 방법으로 하시면 됩니다!
-
-아까 제가 드린 dalab_logo_save.html 파일을 이렇게 쓰세요:
-
-① 다운로드한 dalab_logo_save.html 파일 찾기 다운로드 폴더에 있어요
-
-② Chrome으로 파일 열기 파일 더블클릭 → Chrome에서 로고 이미지만 열림
-
-③ 로고 위에서 우클릭 다른 이름으로 이미지 저장 클릭 → dalab_logo.png 이름으로 저장
-
-Cloudconvert 탭은 닫으셔도 됩니다! 이미 HTML 파일에 로고가 완성되어 있으니 거기서 바로 PNG로 저장하는 게 훨씬 빨라요.
-
-혹시 dalab_logo_save.html 파일을 못 찾으시면 말씀해 주세요, 다시 드릴게요!
-
-스크린샷 2026-03-30 오후 6.03.19.png
-궁금한게 지금 로고를 넣으니까 이렇게 되는데 어떻게 해야하지?
-
-오후 6:03
-
-로고 삽입 후 네비게이션 바 색상 문제를 진단했습니다
-로고 삽입 후 네비게이션 바 색상 문제를 진단했습니다
-현재 화면에서 두 가지 문제가 보여요:
-
-네비게이션 바가 흰색 → 테마 색상이 적용이 안 된 상태
-로고가 너무 작게 표시됨
-이렇게 해보세요:
-
-① 네비게이션 바 색상 고치기
-
-오른쪽 패널에서 Themes 탭 클릭 → my_theme 선택되어 있는지 확인 → 혹시 체크가 없으면 클릭해서 선택
-
-그래도 흰색이면:
-
-상단 네비 바 영역 클릭
-나타나는 툴바에서 배경색(Background) 아이콘 클릭
-#3E0008 입력
-② 로고 위치 조정
-
-지금 로고가 텍스트 왼쪽에 아이콘으로 들어가 있는데, Google Sites에서 로고는 사이트 이름 텍스트 대신 쓰는 게 더 깔끔해요.
-
-상단 "Data Analytics Lab." 텍스트 클릭
-텍스트 옆에 이미지 아이콘(사진 모양) 보이면 클릭 → 로고 PNG 업로드
-텍스트는 지우거나 그대로 둬도 됨
-현재 화면 스크린샷 보니 Insert 패널이 열려 있으니, 지금 바로 Embed 클릭해서 Section 2 코드부터 넣으셔도 됩니다! 로고는 나중에 다시 조정할 수 있어요.
-
-어떤 부분에서 막히셨는지 스크린샷 올려주시면 바로 짚어드릴게요!
-
-헤더에 지금 title only라고 하니까 흰색으로 바꼈고 지금 왼쪽 위를 보면 로고를 넣었는데 엄청 작게 나와 이걸 어떻게 해야될까?
-
-오후 6:05
-
-Google Sites 네비게이션 로고 크기 제한과 헤더 배경색 조정 방안 검토했습니다
-Google Sites 네비게이션 로고 크기 제한과 헤더 배경색 조정 방안 검토했습니다
-두 가지 상황을 정리해 드릴게요!
-
-① 흰색 헤더 없애기
-
-헤더 영역 클릭 → 툴바에서 Header type → None 선택 (없으면 Title only 유지하고 높이를 최대한 줄이기)
-
-그래도 흰 띠가 남으면: 헤더 클릭 → 배경색 아이콘 → #3E0008 입력해서 nav 색과 맞춰주기
-
-② 로고 크기 문제
-
-Google Sites 네비게이션 바의 로고는 무조건 작게 고정되어 있어요. 이건 Google Sites의 한계라 크기 조절이 안 됩니다.
-
-대신 이렇게 하시면 됩니다:
-
-로고 작은 거 그대로 두고 (nav 아이콘 역할)
-"Data Analytics Lab." 텍스트 옆에 함께 표시되는 게 오히려 자연스러워요
-큰 로고는 Welcome 섹션 HTML embed 안에 이미 들어가 있으니 거기서 크게 보임
-지금 바로 할 것:
-
-헤더 정리 끝났으면 오른쪽 패널 Insert → Embed 클릭해서 dalab_google_sites_embeds.html에서 Section 2 코드 붙여넣기 시작하시면 돼요! 로고 크게 보이는 Welcome 섹션이 바로 나타납니다.
-
-이게 결국 logo 크기가 너무 작아서 나타나는 문제인데 이걸 더 키워서 줄 수 있어?
-
-오후 6:07
-
-로고 크기 제약을 우회하여 더 큰 이미지 생성 구상했다
-로고 크기 제약을 우회하여 더 큰 이미지 생성 구상했다
-Google Sites 네비게이션 로고는 가로로 넓은 이미지로 만들면 훨씬 크게 보여요! 아이콘 + "DA-Lab" 텍스트를 하나의 가로형 이미지로 만들어 드릴게요.
-
-
-파일 생성됨, 파일 읽음
-파일 생성됨, 파일 읽음
-다운로드 후 이렇게 하세요:
-
-① dalab_logo_wide.html → Chrome으로 열기
-
-② 로고 이미지 위에서 우클릭 → 다른 이름으로 이미지 저장 → dalab_logo_wide.png
-
-③ Google Sites에서:
-
-왼쪽 위 작은 로고 아이콘 클릭
-기존 로고 삭제 후 새 PNG 업로드
-가로형(400×100px)으로 만들었기 때문에 Google Sites 네비게이션 바 높이에 맞게 크게 표시될 거예요. 텍스트 "DA-Lab"도 이미지 안에 포함되어 있으니 기존 텍스트는 지워도 됩니다!
-
-Dalab logo wide
-코드 · HTML 
-너가 만들어준 사이트 형태를 멤버 페이지 research area 부분 그리고 등등 나머지 부분도 디자인 해서 줄 수 있어?
-
-오후 6:17
-
-각 페이지별 HTML 코드 구성 중입니다
-각 페이지별 HTML 코드 구성 중입니다
-Claude의 응답이 중단되었습니다
-너가 만들어준 사이트 형태를 멤버 페이지 research area 부분 그리고 등등 나머지 부분도 디자인 해서 줄 수 있어?
-한번 그냥 sites . gooogle 을 사용하지 않고 github에 올려서 사이트를 만드려고해
-
-오후 6:17
-
-전체 다중 페이지 웹사이트를 GitHub Pages에 배포하도록 설계했습니다
-전체 다중 페이지 웹사이트를 GitHub Pages에 배포하도록 설계했습니다
-GitHub Pages로 가면 디자인 제한이 없어서 훨씬 좋아요! 전체 페이지 다 만들어 드릴게요.
-
-
-9개의 파일 생성됨, 명령 2개 실행함, 파일 조회함
-9개의 파일 생성됨, 명령 2개 실행함, 파일 조회함
-총 7개 파일이 완성됐어요! 포함된 페이지는 다음과 같습니다:
-
-파일	내용
-index.html	홈 (Welcome + Research strip + News + Cards)
-members.html	교수 프로필 + PhD/MS/학부 학생 카드 + Alumni
-research.html	3개 연구 영역 상세 설명 카드
-publications.html	논문 목록 (연도별 + 필터 버튼)
-teaching.html	강의 과목 카드 (학기별)
-contact.html	연락처 + 교통편 + 학생 모집 박스
-GitHub Pages 배포 방법:
-
-dalab-site.zip 압축 해제
-GitHub → New repository → dalab-site
-파일 전체 업로드
-Settings → Pages → Source: main branch
-https://[username].github.io/dalab-site/ 로 접속
-학생 이름, 논문 정보 등 실제 내용으로 수정이 필요한 부분 있으면 말씀해 주세요!
-
-Dalab site
-ZIP 
-궁금한게 이거 수정하려면 어떻게 해야하지?
-
-오후 6:28
-
-수정 방법을 제시하기 위해 실용적 옵션을 검토했다
-수정 방법을 제시하기 위해 실용적 옵션을 검토했다
-크게 3가지 방법이 있어요. 상황에 맞게 고르시면 됩니다.
-
-방법 1 — VS Code로 직접 편집 (가장 추천)
-VS Code가 설치되어 있으면 가장 편해요.
-
-dalab-site.zip 압축 해제 → 폴더 생성
-VS Code 실행 → 파일 → 폴더 열기 → dalab-site 폴더 선택
-왼쪽에 파일 목록 보임 → 수정할 파일 클릭
-텍스트 직접 수정 → Ctrl+S 저장
-GitHub에 다시 업로드
-수정 후 바로 미리보기 보려면 VS Code에서 Live Server 확장 프로그램 설치하면 브라우저에서 실시간으로 확인 가능해요.
-
-방법 2 — GitHub에서 직접 편집 (간단한 텍스트 수정용)
-GitHub에 올라가 있는 상태라면:
-
-GitHub 저장소 접속
-수정할 파일 클릭 (예: members.html)
-오른쪽 위 연필 아이콘(✏️) 클릭
-텍스트 수정
-아래 Commit changes 클릭
-바로 사이트에 반영돼요. 단순 텍스트 수정(이름, 논문 제목 등)에 적합합니다.
-
-방법 3 — Claude Code 사용 (자동 수정)
-터미널에서 Claude Code를 사용하면 "멤버 이름 바꿔줘", "논문 추가해줘" 같은 자연어 명령으로 파일을 자동 수정할 수 있어요. CAIO 업무 특성상 이 방법이 장기적으로 가장 효율적일 수 있습니다.
-
-주로 수정할 내용별 파일 위치:
-
-수정 내용	파일
-학생 이름/정보	members.html
-논문 추가/수정	publications.html
-강의 과목	teaching.html
-연락처/주소	contact.html + shared.js
-뉴스 추가	index.html
-색상/폰트	style.css
-지금 어떤 환경에서 작업하시나요? 그에 맞게 더 구체적으로 알려드릴 수 있어요!
-
-github에 올리는 방법을 구체적으로 설명해줘 일단 new repository를 해서 생성을 했고 dalab-site로 생성을 해놓은 상황이야 여기서 파일 전체 업로드 어떻게 하지?
-
-오후 6:32
-
-GitHub 저장소에 파일 업로드하는 단계별 지침을 구성했다
-GitHub 저장소에 파일 업로드하는 단계별 지침을 구성했다
-두 가지 방법이 있는데, 방법 A (드래그앤드롭) 가 제일 쉬워요!
-
-방법 A — 브라우저에서 드래그앤드롭 (가장 쉬움)
-① 저장소 페이지에서 파일 업로드 클릭
-
-github.com/[username]/dalab-site 접속하면 "uploading an existing file" 링크 또는 "Add file → Upload files" 버튼 보임 → 클릭
-
-② 파일 전체 드래그앤드롭
-
-dalab-site.zip 압축 해제 → dalab-site 폴더 열기
-폴더 안에 있는 파일 전체 선택 (Ctrl+A)
-GitHub 업로드 페이지의 점선 박스 안으로 드래그앤드롭
-③ Commit
-
-아래 Commit changes 버튼 클릭 → 완료!
-
-방법 B — GitHub Desktop 앱 사용 (이후 관리가 편함)
-나중에 자주 수정할 예정이라면 이게 더 편해요.
-
-GitHub Desktop 다운로드 → desktop.github.com
-설치 후 로그인
-File → Add local repository → dalab-site 폴더 선택
-Publish repository 클릭 → GitHub에 자동 업로드
-이후 파일 수정할 때마다 → GitHub Desktop에서 Commit → Push 클릭
-업로드 후 GitHub Pages 활성화
-파일 올린 다음 이렇게 해야 사이트가 열려요:
-
-저장소 상단 Settings 탭 클릭
-왼쪽 메뉴 Pages 클릭
-Source → Deploy from a branch 선택
-Branch → main 선택 → / (root) → Save
-1~2분 후 https://[username].github.io/dalab-site/ 접속하면 사이트 열림
-지금 저장소 페이지 스크린샷 올려주시면 바로 어디 클릭할지 짚어드릴게요!
-
-일단 지금 이 github page를 다른사람들한테 공유를 하고 싶은데 어떻게 하지?
-
-페이지 공유보다 페이지를 수정할 수 있는 권한을 주고 싶어
-
-오후 6:34
-
-사용자가 저장소 편집 권한 부여 방법을 찾고 있음을 파악했다
-사용자가 저장소 편집 권한 부여 방법을 찾고 있음을 파악했다
-GitHub 저장소에 Collaborator(협력자) 로 추가하면 돼요!
-
-수정 권한 주는 방법
-① 저장소 → Settings 클릭
-
-github.com/[username]/dalab-site 에서 상단 Settings 탭 클릭
-
-② Collaborators 메뉴 클릭
-
-왼쪽 메뉴에서 Collaborators (또는 Access → Collaborators) 클릭
-
-③ 초대 보내기
-
-Add people 버튼 클릭 → 상대방 GitHub 아이디 또는 이메일 입력 → Add collaborator 클릭
-
-④ 상대방이 수락
-
-상대방 이메일로 초대장이 가고, 수락하면 바로 수정 권한이 생겨요
-
-권한 종류 (역할 선택 가능)
-역할	할 수 있는 것
-Read	보기만 가능
-Write	파일 수정, 업로드 가능 ← 일반적으로 이거
-Admin	설정 변경까지 가능
-학생들한테 줄 때는 Write 권한이 적당해요.
-
-상대방이 수락 후 수정하는 방법
-상대방은 저장소 페이지에서:
-
-GitHub 웹에서 직접 파일 클릭 → 연필 아이콘으로 수정
-또는 GitHub Desktop 으로 내려받아서 수정 후 업로드
-상대방 GitHub 아이디 알고 계시면 바로 진행하시면 돼요!
-
-그럼 다시 배포를 하는 방법을 알려줘
-
-궁금한게 배포를 하고 나서 수정을 해도 수정된게 업데이트 되지?
-
-오후 6:39
-네, 자동으로 업데이트 됩니다! GitHub Pages는 파일이 수정될 때마다 1~2분 안에 자동으로 반영돼요.
-
-배포 방법 (최초 1회만 설정)
-① Settings → Pages
-
-저장소 페이지 상단 Settings → 왼쪽 Pages 클릭
-
-② Branch 설정
-
-Source: Deploy from a branch
-Branch: main 선택
-폴더: / (root) 선택
-Save 클릭
-③ 1~2분 후 URL 확인
-
-Pages 페이지 상단에 초록색으로 Your site is live at https://[username].github.io/dalab-site/ 라고 뜨면 완료!
-
-수정 후 업데이트 흐름
-파일 수정 → GitHub에 업로드(commit) → 1~2분 후 자동 반영
-수정 방법에 따라:
-
-GitHub 웹에서 수정할 때 파일 클릭 → ✏️ 클릭 → 수정 → Commit changes → 자동 반영
-
-파일을 새로 올릴 때 Add file → Upload files → 파일 업로드 → Commit changes → 자동 반영
-
-업데이트 확인 방법
-저장소 상단 Actions 탭 클릭하면 배포 진행 상황이 보여요.
-
-🟡 노란 원 = 배포 중
-✅ 초록 체크 = 배포 완료
-❌ 빨간 X = 오류 발생
-배포 완료 후 사이트 URL 접속하면 수정된 내용이 바로 보입니다!
-
-스크린샷 2026-03-30 오후 6.54.31.png
-혹시 홈페이지 맴버 부분에서 언제 부터 언제까지 있었는지 보이려고 하는데 어떻게 해야하지? 혹시 이 정보 바탕으로 멤버 부분 html 수정해줄 수 있어? 이미지 넣는 칸을 따로 설정해주고 너가 준 디자인 포멧대로 일단 갈거긴해 여기에 나와있는 정보들만 추가해서 줄 수 있어?
-
-오후 6:55
-
-추출한 데이터로 멤버 HTML 재구성 및 기간 표시 추가 계획
-추출한 데이터로 멤버 HTML 재구성 및 기간 표시 추가 계획
-스크린샷에서 정보 다 확인했어요! 실제 데이터로 members.html 새로 만들어 드릴게요.
-
-
-2개의 파일 생성됨, 명령 2개 실행함, 파일 읽음
-2개의 파일 생성됨, 명령 2개 실행함, 파일 읽음
-실제 데이터로 업데이트된 전체 사이트 파일이에요!
-
-변경된 내용
-실제 멤버 정보가 모두 반영됐어요:
-
-교수님: Minsu Cho, Ph.D. + 주소/이메일/전화번호
-M.S.: 박헌우, 조현서, 박도현 (기간 포함)
-Visiting: 박희령
-B.S.: 김세진, 이치우, 이재용
-Alumni: 12명 전원 (기간 포함)
-사진 넣는 방법
-각 멤버 카드에 사진 칸이 준비되어 있어요. 사진을 넣으려면:
-
-dalab-site 폴더 안에 images 폴더 생성
-사진 파일 넣기 (예: minsucho.jpg)
-해당 멤버 카드에서 주석 처리된 부분 활성화:
-html
-<!-- <img src="images/minsucho.jpg" alt="Minsu Cho"> -->
-→ <!-- 와 --> 제거하면 사진이 표시됩니다!
-
-Dalab site
-ZIP 
-스크린샷 2026-03-30 오후 7.12.04.png
-스크린샷 2026-03-30 오후 7.12.14.png
-스크린샷 2026-03-30 오후 7.12.20.png
-지금 이게 전체 논문들인데 이거가지고 Publication 부분을 업데이트 해줘
-궁금한게 이거 수정하게 되면 전체 사이트가 수정되는건가?
-
-만약 그렇지 않는다면 그냥 publication부분만 수정해서 줘
-
-그리고 지금 github에서 배포를 완료 했고 크롬에서 github 사이트 들어가서 수정하고 있는 상황인데 수정하고 나서 만들어진 웹사이트 들어가니까 업데이트가 안되어있어 어떻게 해야돼?
-
-오후 7:16
-
-추출한 논문 데이터로 발행물 페이지 재구성 및 깃허브 캐시 문제 진단
-추출한 논문 데이터로 발행물 페이지 재구성 및 깃허브 캐시 문제 진단
-두 가지 먼저 답변드릴게요!
-
-수정 범위: publications.html 파일만 수정하면 돼요. 각 파일이 독립적으로 작동해서 다른 페이지엔 영향 없어요.
-
-업데이트 안 되는 문제: GitHub에서 Commit 후 1~2분 기다린 다음 Ctrl+Shift+R (강제 새로고침)을 해보세요. 브라우저 캐시 때문에 안 보이는 경우가 많아요.
-
-이제 실제 데이터로 publications.html 만들어 드릴게요.
-
-
-명령 2개 실행함, 파일 생성됨, 파일 읽음
-명령 2개 실행함, 파일 생성됨, 파일 읽음
-publications.html 파일만 따로 드렸어요. 이 파일 하나만 GitHub에 업로드하면 됩니다.
-
-포함된 내용
-Journals 탭: 논문 20편 (연도별 정렬)
-Conferences 탭: 컨퍼런스 전체 (한국어 논문은 [Korean] 태그 표시)
-Patents 탭: 특허 2건
-Awards 탭: 수상 8건
-탭 클릭으로 전환되는 구조로 만들었어요.
-
-GitHub에서 업데이트 안 되는 문제 해결
-Commit 후에도 업데이트가 안 보이면:
-
-저장소 상단 Actions 탭 클릭 → 초록 체크(✅)인지 확인
-체크 맞으면 사이트에서 Ctrl+Shift+R (강제 새로고침)
-그래도 안 되면 크롬 주소창에 사이트 URL 입력 후 맨 끝에 ?v=2 붙이고 엔터
-Publications
-코드 · HTML 
-혹시 아까 포멧으로 해서 다시 줄 수 있어?
-
-논문에서 번호는 안 맥여도 되고 전 포멧이랑 동일하게 해서 업데이트를 해서 줘 조금 다르네
-이거를 내 사이트에 넣었을 때 확인하고 알려준거야
-
-오후 7:23
-
-이전 필터 형식으로 실제 데이터 재구성했습니다
-이전 필터 형식으로 실제 데이터 재구성했습니다
-이전 포맷(필터 버튼 + 연도별 섹션)으로 맞춰서 다시 드릴게요!
-
-
-명령 2개 실행함, 파일 생성됨, 파일 읽음
-명령 2개 실행함, 파일 생성됨, 파일 읽음
-이전 포맷 그대로 실제 데이터로 업데이트했어요!
-
-포함된 내용:
-
-필터 버튼: All / Journal / Conference / Patent / Award / Process Mining / Text Mining / Industrial AI
-연도별 섹션: 2024 ~ 2014 + Patents 섹션
-번호 없이 제목 / 저자 / 저널명 / 태그 구조
-M. Cho 는 빨간색으로 강조 표시
-필터 클릭 시 해당 항목만 보이고 해당 연도 섹션도 자동으로 숨겨짐
-GitHub 업로드 방법: 저장소에서 기존 publications.html 클릭 → ✏️ 편집 아이콘 → 전체 선택 후 새 코드로 교체 → Commit changes 클릭!
-
-Publications
-코드 · HTML 
-스크린샷 2026-03-30 오후 7.30.57.png
-스크린샷 2026-03-30 오후 7.31.11.png
-스크린샷 2026-03-30 오후 7.35.28.png
-more info 부분이 원래 지금 members 부분에 이런 형식으로 있었는데 너가 준 포멧에서 more info 부분만 조금 수정해서 다시 만들어줄 수 있어?
-나머지는 다 괜찮은데 more info를 눌렀을 때 두번째 이미지와 같은 정보가 들어가면 좋아. 디자인이나 포멧은 그대로 원래 하던거에 유지를 해줘
-단 more info눌렀을 때 페이지 추가해주고 
-
-            <div class="prof-links">
-              <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
-              <a href="https://www.researchgate.net/profile/Minsu-Cho" target="_blank">ResearchGate</a>
-              <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
-
-이게 지금 교수님이 가지고 있는 정보들이야 
-
-footer 부분에서도 이 부분 수정해서 주고 
-필요로 수정해야되는 부분 있으면 이거 수정해서 줘
-
-이번에는 전체 코드를 다시 줄 수 있어?
-
-3번째 이미지는 teaching 부분을 수정을 한거야. 포멧에 맞게 해서 내용을 수정해줘
-
-teaching은 한글로 작성되어있는거 그대로 사용해도 될 거 같아
-다시 하라는거 하고 zip 파일 만들어줄 수 있어?
-
-더 보기
-오후 7:36
-
-교수 정보 페이지 구성 및 전체 코드 작성 중
-교수 정보 페이지 구성 및 전체 코드 작성 중
-전체 사이트 업데이트 완료했어요! 이번에 수정된 파일은 총 4개입니다.
-
-변경 내용 요약:
-
-members.html — More Info 버튼이 진한 크림슨 색상으로 강조되고 professor.html로 연결됩니다. Google Scholar / ResearchGate / LinkedIn 실제 링크 적용.
-
-professor.html (신규) — More Info 클릭 시 이동하는 페이지. 학력, 경력, 연구 관심사, 활동(Reviewer/Member/Program Committee) 전부 포함. 상단에 "← Back to Members" 버튼 있음.
-
-teaching.html — 실제 강의 4개(학부) + 1개(대학원) 한글 설명 그대로 포함. 학부/대학원 구분 헤더 추가.
-
-shared.js — Footer에 실제 링크(Google Scholar, ResearchGate, LinkedIn), 주소, 전화번호 업데이트.
-
-GitHub 업로드 시 이 4개 파일을 교체하면 됩니다: members.html / professor.html (신규 추가) / teaching.html / shared.js
-
-Dalab site
-ZIP 
-github에 올라온거를 다 지우고 너가 준 zip을 업로드 하려고하는데 어떻게 해야하지?
-
-오후 7:48
-
-GitHub 저장소 업데이트를 위한 최적 방법을 검토했다
-GitHub 저장소 업데이트를 위한 최적 방법을 검토했다
-파일을 하나씩 지울 필요 없이 더 쉬운 방법이 있어요!
-
-가장 쉬운 방법 — 그냥 덮어쓰기 업로드
-GitHub는 같은 이름의 파일을 올리면 자동으로 덮어씌워져요. 그래서 전부 지울 필요가 없어요.
-
-① zip 압축 해제 dalab-site.zip 압축 해제 → dalab-site 폴더 열기
-
-② GitHub 저장소에서 Add file → Upload files 클릭
-
-③ 폴더 안 파일 전체 선택 후 드래그앤드롭 Ctrl+A 로 전체 선택 → GitHub 업로드 박스에 드래그
-
-④ Commit changes 클릭
-
-기존 파일은 덮어씌워지고, 새 파일(professor.html)은 자동으로 추가돼요.
-
-만약 그래도 전체 초기화하고 싶다면
-저장소 삭제 후 새로 만들기:
-
-저장소 → Settings → 맨 아래 Delete this repository 클릭
-저장소 이름 입력 후 삭제 확인
-새로 dalab-site 저장소 생성
-파일 업로드
-Settings → Pages → main branch → Save
-덮어쓰기 방법이 훨씬 빠르니 그 방법을 추천드려요!
-
-professor.html이 안들어가지는데 이유가 뭐야?
-
-오후 7:50
-
-파일 업로드 폴더 구조 문제를 진단했습니다
-파일 업로드 폴더 구조 문제를 진단했습니다
-아마 이 이유 중 하나일 거예요!
-
-원인 1 — 폴더째로 드래그했을 때 (가장 흔한 원인)
-GitHub는 폴더 자체를 드래그하면 안 돼요. 폴더 안의 파일들을 선택해서 드래그해야 합니다.
-
-올바른 방법:
-
-dalab-site.zip 압축 해제
-dalab-site 폴더를 열고 안으로 들어가기
-폴더 안에 있는 파일들(index.html, members.html, professor.html 등) 전체 선택 (Ctrl+A)
-그 파일들을 GitHub에 드래그앤드롭
-원인 2 — 파일이 너무 많아서 업로드 누락
-GitHub 웹 업로드는 한 번에 100개 파일 제한이 있는데, 파일 수가 적으니 이건 아닐 가능성이 높아요.
-
-원인 3 — 브라우저 캐시
-업로드 후 사이트에서 안 보인다면 Ctrl+Shift+R 강제 새로고침 해보세요.
-
-확인 방법
-GitHub 저장소 메인 페이지에서 파일 목록에 professor.html이 보이는지 확인해 보세요. 목록에 없으면 업로드가 안 된 거고, 목록에 있으면 배포 중인 거예요.
-
-혹시 지금 어떤 상황인지 스크린샷 올려주시면 바로 짚어드릴게요!
-
-footer 부분을 수정하려고하는데 어떻게 해야하지?
-
-오후 7:52
-
-발견했다: 푸터는 shared.js에서 수정 가능
-발견했다: 푸터는 shared.js에서 수정 가능
-Footer는 shared.js 파일 하나만 수정하면 모든 페이지에 자동으로 반영돼요!
-
-GitHub에서 직접 수정하는 방법
-① 저장소에서 shared.js 파일 클릭
-
-② 오른쪽 위 ✏️ 연필 아이콘 클릭
-
-③ injectFooter() 함수 안에서 원하는 부분 수정
-
-수정할 수 있는 부분들:
-
-javascript
-// 주소 수정
-<p>#802 Sabit-Bldg, 20, Gwangun-ro<br>
-Nowon-gu, Seoul, Republic of Korea<br>ZIP: 01897</p>
-
-// 연락처 수정
-<a href="mailto:mcho@kw.ac.kr">Professor | mcho@kw.ac.kr</a>
-<a href="tel:+8229408454">Tel: +82-2-940-8454</a>
-
-// 링크 수정
-<a href="https://scholar.google.co.kr/..." target="_blank">Google Scholar</a>
-<a href="https://www.researchgate.net/..." target="_blank">ResearchGate</a>
-<a href="https://www.linkedin.com/..." target="_blank">LinkedIn</a>
-
-// 하단 저작권 문구 수정
-© 2025 Data Analytics Lab., Kwangwoon University. All rights reserved.
-④ 아래 Commit changes 클릭 → 전체 페이지 footer 자동 업데이트
-
-어떤 부분을 수정하고 싶으신지 알려주시면 수정된 코드 바로 드릴게요!
-
-스크린샷 2026-03-30 오후 7.53.53.png
-home에서 이 부분을 가운데로 정리하고 싶은데 어떻게 하는게 좋을까?
-
-오후 7:54
-
-환영 섹션 중앙 정렬을 위한 CSS 수정안을 검토했다
-환영 섹션 중앙 정렬을 위한 CSS 수정안을 검토했다
-두 가지 방향 중 선택하시면 돼요!
-
-옵션 A — 텍스트+로고 블록을 화면 가운데로 정렬 옵션 B — 로고를 위에, 텍스트를 아래 (수직 중앙 레이아웃)
-
-어떤 스타일을 원하시는지에 따라 다른데, 가장 깔끔한 건 옵션 A예요.
-
-index.html에서 .welcome 스타일 한 줄만 수정하면 됩니다:
-
-변경 전:
-
-css
-.welcome { background: #fff; padding: 56px 48px; display: flex; align-items: center; gap: 40px; border-bottom: 1px solid var(--border); }
-변경 후:
-
-css
-.welcome { background: #fff; padding: 56px 48px; display: flex; align-items: center; gap: 40px; border-bottom: 1px solid var(--border); justify-content: center; max-width: 960px; margin: 0 auto; border-left: none; border-right: none; }
-그런데 border-bottom이 전체 폭에 걸쳐야 하니까 약간 구조를 바꾸는 게 더 깔끔해요. GitHub에서 index.html 열고 .welcome 부분을 이렇게 수정해 주세요:
-
-css
-.welcome {
-  background: #fff;
-  padding: 56px 48px;
-  border-bottom: 1px solid var(--border);
-}
-
-.welcome-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  justify-content: center;
-}
-그리고 HTML에서 <section class="welcome"> 바로 안에 <div class="welcome-inner"> 로 텍스트와 SVG 로고를 감싸주면 돼요.
-
-직접 수정해 드릴까요? 원하시면 수정된 index.html 파일로 바로 드릴게요!
-
-Kim Sejin.jpeg
-JaeYong Lee.jpeg
-Hyunwoo_Park.jpeg
-Heeryeong Park.jpeg
-Chiwoo Lee.png
-Prof_Minsu_Cho.jpeg
-DoHyun Park.jpeg
-지금 이거 각 이름에 맞게 혹시 members 이름에 넣어줄 수 있어?
-
-교수가 현재 Associate Professor가 되었는데 이것도 이름 수정해주고 
-
-가능하다면 Members에서 
-교수님 사진을 조금 더 잘 보일 수 있게 크기를 키워주고
-나머지 학생들의 이미지도 조금 더 크게 해서 줄 수 있어?
-학생들 이미지는 틀에 맞게 하면 될거 같고 
-이메일이 정보가 있는 부분까지 키우면 될 거 같고 
-교수 이미지는 조금더 사이즈에 맞게 배치 해주면 좋을거 같아
-
-오후 10:00
-
-사진 업로드 후 HTML 파일들 수정 계획 수립했음
-사진 업로드 후 HTML 파일들 수정 계획 수립했음
-완료했어요! 이번 zip에는 images 폴더가 새로 포함되어 있어요.
-
-변경 내용:
-
-교수님: Associate Professor로 수정, 실제 사진 적용 (180×220px)
-박헌우, 박도현, 박희령, 김세진, 이치우, 이재용 — 실제 사진 적용 (90×110px)
-조현서 — 사진 미제공으로 placeholder 유지
-professor.html도 실제 사진 + Associate Professor로 업데이트
-GitHub 업로드 시 주의사항:
-
-이번에는 images 폴더가 새로 추가됐어요. GitHub에 올릴 때 이 폴더도 반드시 포함해야 사진이 보입니다.
-
-압축 해제 후 dalab-site 폴더 안에 들어가서 Ctrl+A 전체 선택 → GitHub에 드래그앤드롭하면 images 폴더째로 올라가요!
-
-Dalab site
-ZIP 
-https://www.google.com/maps/place/20+Gwangun-ro,+Nowon-gu,+Seoul/data=!4m6!3m5!1s0x357cbb95338a1d17:0x4f741d6f46888ef7!8m2!3d37.6197029!4d127.0596708!16s%2Fg%2F11bzg9s6y9?hl=en&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D
-
-contact 에서 📍 Kwangwoon University, Seoul 부분에 이 이미지가 들어갈 수 있게 할 수 있어?
-
-research area 는 이 이미지에 있는 내용을 토대로 해주고 
-포멧은 원래 그대로 가고 내용만 업데이트 해줘
-
-각 html 파일만 주고 전체는 안줘도 돼 
-
-https://scholar.google.co.kr/citations?hl=ko&user=HwE3cfoAAAAJ&view_op=list_works&sortby=pubdate
-
-여기서 확인해보면 최근에 올라온 논문 2026 두개 있을거야 이 부분도 추가해서 publish 부분에 업데이트 해줘 포멧은 그대로 가줘
-중간에 all journel 등등 부분도 맞게 설정해서 줄 수 있어?
-
-더 보기
-오후 10:17
-
-Google Scholar에서 2026년 논문 수집 중
-Google Scholar에서 2026년 논문 수집 중
-먼저 Google Scholar에서 최신 논문 확인할게요!
-
-
-계획했다: 지도 임베드 추가, 연구 내용 업데이트, 논문 자리 확보
-계획했다: 지도 임베드 추가, 연구 내용 업데이트, 논문 자리 확보
-Google Scholar는 robots.txt로 막혀있어서 직접 접근이 안 되네요. 2026 논문 제목을 알려주시면 바로 추가해 드릴게요! 일단 나머지 3개 파일 먼저 만들어 드릴게요.
-
-
-2개의 파일 생성됨, 명령 실행함
-2개의 파일 생성됨, 명령 실행함
-이제 publications에서 2026 논문 2개를 추가해야 하는데, Google Scholar가 막혀 있어서 제목을 직접 확인하기 어렵습니다. 2026년 논문 제목을 알려주시면 바로 추가해 드릴게요!
-
-일단 3개 파일 바로 드릴게요:
-
-
-명령 실행함, 파일 읽음
-명령 실행함, 파일 읽음
-업데이트된 파일 2개 드렸어요.
-
-변경 내용:
-
-contact.html — 지도 자리에 실제 Google Maps iframe 삽입 (광운대학교 좌표 사용). 게시 후 실제 지도가 보입니다.
-
-research.html — 스크린샷 내용 그대로 반영:
-
-Process Mining: 12개 토픽 (3열 그리드)
-Text Mining: 8개 토픽
-Industrial AI 유지
-Research Projects 섹션 새로 추가 (8개 프로젝트, 한글 그대로)
-publications.html 2026 논문 추가는 제목을 알려주시면 바로 만들어 드릴게요! 혹시 Google Scholar 페이지에서 논문 제목을 복사해서 붙여넣어 주실 수 있으신가요?
-
-Contact
-코드 · HTML 
-Research
-코드 · HTML 
-스크린샷 2026-03-30 오후 10.21.40.png
-이게 논문들이야
-
-오후 10:22
-
-두 편의 2026년 논문 식별 중
-두 편의 2026년 논문 식별 중
-확인했어요! 2026년 논문 2편 보이네요. publications.html에 추가해 드릴게요.
-
-
-Publications.html with 2026 papers added
-Publications.html with 2026 papers added
-
-
-
-Claude는 AI이며 실수할 수 있습니다. 응답을 다시 한번 확인해 주세요.
-Research · HTML
-복사
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1034,7 +10,7 @@ Research · HTML
     .research-section { padding: 52px 0; }
     .research-block { margin-bottom: 56px; }
     .research-block:last-child { margin-bottom: 0; }
- 
+
     .research-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
     .research-card-header {
       background: var(--red-tint); border-bottom: 1px solid var(--border);
@@ -1044,12 +20,11 @@ Research · HTML
     .research-title { font-size: 22px; font-weight: 700; color: var(--red-dark); font-family: Georgia, serif; }
     .research-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
     .research-desc { font-size: 14.5px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
- 
-    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 20px; margin-bottom: 24px; }
+
+    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 20px; margin-bottom: 8px; }
     .topic-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
     .topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red-bright); flex-shrink: 0; margin-top: 6px; }
- 
-    /* Projects section */
+
     .projects-block { margin-top: 52px; }
     .projects-title {
       font-size: 22px; font-weight: 700; color: var(--red-dark);
@@ -1064,8 +39,8 @@ Research · HTML
     .project-item:last-child { border-bottom: none; }
     .project-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red-bright); flex-shrink: 0; margin-top: 7px; }
     .project-item strong { color: var(--text-primary); }
-    .project-item .period { color: var(--text-muted); font-size: 12.5px; white-space: nowrap; }
- 
+    .project-item .period { color: var(--text-muted); font-size: 12.5px; }
+
     @media (max-width: 768px) {
       .topic-grid { grid-template-columns: 1fr 1fr; }
       .research-card-header { flex-direction: column; align-items: flex-start; }
@@ -1074,17 +49,17 @@ Research · HTML
 </head>
 <body>
 <nav></nav>
- 
+
 <div class="page-header">
   <div class="label">What We Do</div>
   <h1>Research Areas</h1>
   <p>Our research bridges data science and real-world challenges through three core areas.</p>
 </div>
- 
+
 <main>
   <div class="research-section">
     <div class="container">
- 
+
       <!-- ═══ PROCESS MINING ═══ -->
       <div class="research-block">
         <div class="research-card">
@@ -1112,7 +87,6 @@ Research · HTML
           </div>
           <div class="research-card-body">
             <p class="research-desc">Data Analytics Laboratory conducts a variety of research for process mining, which aims to extract process-oriented knowledge from event logs collected by information systems. This includes various techniques, including process discovery, conformance checking, predictive process monitoring, and others. Our laboratory develops novel methods for process mining and its applications in diverse domains, including healthcare, education, manufacturing, finance, and others.</p>
- 
             <div class="topic-grid">
               <div class="topic-item"><div class="topic-dot"></div>Process discovery</div>
               <div class="topic-item"><div class="topic-dot"></div>Sensor-based Process Mining</div>
@@ -1130,7 +104,7 @@ Research · HTML
           </div>
         </div>
       </div>
- 
+
       <!-- ═══ TEXT MINING ═══ -->
       <div class="research-block">
         <div class="research-card">
@@ -1159,7 +133,6 @@ Research · HTML
           </div>
           <div class="research-card-body">
             <p class="research-desc">Data Analytics Laboratory conducts a variety of research for text mining, which aims to investigate valuable information and knowledge from large volumes of text data. This includes various techniques, including text classification, sentiment analysis, topic modeling, LLM-based approaches, and others. Our laboratory resolves industry challenges using text mining techniques and develops novel methods to bridge the gap between NLP and other domains.</p>
- 
             <div class="topic-grid">
               <div class="topic-item"><div class="topic-dot"></div>Language Models</div>
               <div class="topic-item"><div class="topic-dot"></div>Technological Forecasting with Text Mining</div>
@@ -1173,7 +146,7 @@ Research · HTML
           </div>
         </div>
       </div>
- 
+
       <!-- ═══ INDUSTRIAL AI ═══ -->
       <div class="research-block">
         <div class="research-card">
@@ -1210,7 +183,6 @@ Research · HTML
           </div>
           <div class="research-card-body">
             <p class="research-desc">Industrial AI applies machine learning and data analytics to manufacturing and industrial systems, enabling smarter decision-making, automated quality control, and predictive maintenance. DA-Lab collaborates with industry partners to develop practical AI solutions for real production environments.</p>
- 
             <div class="topic-grid">
               <div class="topic-item"><div class="topic-dot"></div>Anomaly detection in manufacturing</div>
               <div class="topic-item"><div class="topic-dot"></div>Predictive maintenance</div>
@@ -1222,62 +194,54 @@ Research · HTML
           </div>
         </div>
       </div>
- 
+
       <!-- ═══ RESEARCH PROJECTS ═══ -->
       <div class="projects-block">
         <div class="projects-title">Research Projects</div>
         <div style="background:#fff; border:1px solid var(--border); border-radius:14px; padding:8px 28px;">
- 
+
           <div class="project-item">
             <div class="project-dot"></div>
             <div>모델 지능, 행동 추론 및 문영 적응을 위한 계층적 AI 기반 프로세스 지능 프레임워크 개발 <span class="period">· 2026-03-01 ~ 2029-02-28, 한국연구재단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
             <div>AI-BioDynamics: 생물다양성 매핑 및 보전 의사결정을 위한 인공지능 <span class="period">· 2025-10-01 ~ 2028-09-30, 한국연구재단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
             <div>사회과학 분야 내 연구 신뢰성 평가를 위한 LLM 기반 자동 분석 및 검증 연구 <span class="period">· 2025. 06 ~ 2027. 04, 한국연구재단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
-            <div>듀얼 프로세스 이론 기반 온라인 리뷰의 유용성 실증 연구: 구조방정식 모델링 및 설명 가능한 인공지능을 통한 접근 <span class="period">· 2024. 06 ~ 2025. 05, 한국연구재단</span></div>
+            <div>듀얼 프로세스 이론 기반 온라인 리뷰의 유용성 실증 연구 <span class="period">· 2024. 06 ~ 2025. 05, 한국연구재단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
             <div>센서 기반 라이프로그 데이터를 활용한 인공지능 및 프로세스 마이닝 적용 방법 개발 연구 <span class="period">· 2024. 03 ~ 2025. 02, 광운대학교</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
             <div>공통 데이터 모델 및 딥러닝을 활용한 의료형 객체 중심 프로세스 마이닝 개발 연구 <span class="period">· 2021. 09 ~ 2024. 02, 한국연구재단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
-            <div>지능형 로봇을 위한 기초수학 분야의 학습 패턴 분석 및 교육 개선안 도출: 데이터 애널리틱스 활용 사례 연구 <span class="period">· 2021. 09 ~ 2022. 02, 한양대학교 산학협력단</span></div>
+            <div>지능형 로봇을 위한 기초수학 분야의 학습 패턴 분석 및 교육 개선안 도출 <span class="period">· 2021. 09 ~ 2022. 02, 한양대학교 산학협력단</span></div>
           </div>
- 
           <div class="project-item">
             <div class="project-dot"></div>
             <div>프로세스 마이닝 기반의 다분야 유즈케이스 도출 <span class="period">· 2021. 03 ~ 2023. 02, 광운대학교</span></div>
           </div>
- 
+
         </div>
       </div>
- 
+
     </div>
   </div>
 </main>
- 
+
 <footer></footer>
 <script src="shared.js"></script>
 <script>injectNav('Research'); injectFooter();</script>
 </body>
 </html>
- 
