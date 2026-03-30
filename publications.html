@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +15,9 @@
       border: 1px solid var(--border); background: #fff;
       color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
     }
-    .filter-btn.active,
-    .filter-btn:hover { background: var(--red-dark); color: #fff; border-color: var(--red-dark); }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--red-dark); color: #fff; border-color: var(--red-dark);
+    }
 
     .year-group { margin-bottom: 40px; }
     .year-label {
@@ -29,16 +31,13 @@
       border-bottom: 1px solid #F5EAEA; align-items: flex-start;
     }
     .pub-item:last-child { border-bottom: none; }
-
     .pub-body .title {
       font-size: 14.5px; font-weight: 600; color: var(--text-primary);
       margin-bottom: 4px; line-height: 1.45;
     }
     .pub-body .title a { color: var(--text-primary); }
     .pub-body .title a:hover { color: var(--red-mid); text-decoration: underline; }
-    .pub-body .authors {
-      font-size: 13px; color: var(--text-secondary); margin-bottom: 3px;
-    }
+    .pub-body .authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 3px; }
     .pub-body .authors strong { color: var(--red-mid); font-weight: 700; }
     .pub-body .venue { font-size: 13px; color: #777; font-style: italic; margin-bottom: 7px; }
     .pub-body .tags { display: flex; gap: 7px; flex-wrap: wrap; }
@@ -53,8 +52,6 @@
     .tag-ko       { background: #F5F5F5; color: #666; font-size: 10.5px; }
 
     .note { font-size: 11.5px; color: #AAA; }
-
-    /* Hidden items when filtered */
     .pub-item.hidden { display: none; }
     .year-group.empty { display: none; }
   </style>
@@ -83,6 +80,41 @@
         <button class="filter-btn" data-filter="iai">Industrial AI</button>
       </div>
 
+      <!-- ═══ 2026 ═══ -->
+      <div class="year-group" id="y2026">
+        <div class="year-label">2026</div>
+
+        <div class="pub-item" data-tags="journal text">
+          <div class="pub-body">
+            <div class="title">
+              <a href="#" target="_blank">Experience Goods and Delayed Price Discovery: Evidence from Information Frictions in Game Releases</a>
+            </div>
+            <div class="authors">P. Sujin, C. <strong>Minsu</strong></div>
+            <div class="venue">Mathematics, 14(5), 755, 2026</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-text">Text Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal pm text">
+          <div class="pub-body">
+            <div class="title">
+              <a href="#" target="_blank">Extracting declarative constraints for process modeling from natural language descriptions with large language models</a>
+            </div>
+            <div class="authors">G. Park, J. Kofferath, <strong>M. Cho</strong></div>
+            <div class="venue">Decision Support Systems, 114627, 2026</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-text">Text Mining</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2026 -->
+
       <!-- ═══ 2024 ═══ -->
       <div class="year-group" id="y2024">
         <div class="year-label">2024</div>
@@ -103,7 +135,7 @@
           <div class="pub-body">
             <div class="title"><a href="#" target="_blank">Unlocking learner engagement and performance: A multidimensional approach to mapping learners to learning cohorts</a></div>
             <div class="authors">H. Kim, G. Park, <strong>M. Cho*</strong></div>
-            <div class="venue">Education and Information Technologies, 2024+, Accepted</div>
+            <div class="venue">Education and Information Technologies, 29(17), 23817-23857, 2024</div>
             <div class="tags">
               <span class="tag tag-journal">Journal</span>
               <span class="tag tag-text">Text Mining</span>
@@ -435,19 +467,6 @@
           </div>
         </div>
 
-        <div class="pub-item" data-tags="conference pm">
-          <div class="pub-body">
-            <div class="title">Development of Clinical Pathways using Electronic Health Records</div>
-            <div class="authors"><strong>M. Cho</strong>, J. Lim, M. Song, S. Yoo, K. Kim, H. Baek</div>
-            <div class="venue">The Korea Society of Medical Informatics (대한의료정보학회), Seoul, Korea, July 11-12, 2019</div>
-            <div class="tags">
-              <span class="tag tag-conf">Conference</span>
-              <span class="tag tag-pm">Process Mining</span>
-              <span class="tag tag-ko">Korean</span>
-            </div>
-          </div>
-        </div>
-
         <div class="pub-item" data-tags="award">
           <div class="pub-body">
             <div class="title">Best Paper Award</div>
@@ -509,7 +528,7 @@
           <div class="pub-body">
             <div class="title"><a href="#" target="_blank">A New Framework for Defining Realistic SLAs: An Evidence-Based Approach</a></div>
             <div class="authors"><strong>M. Cho</strong>, M. Song, C. Müller, P. Fernandez, A. del-Rio-Ortega, M. Resinas, A. Ruiz-Cortés</div>
-            <div class="venue">BPM 2017 Forum, Lecture Notes in Business Information Processing, Vol. 297, Barcelona, Spain, September 10-15, 2017</div>
+            <div class="venue">BPM 2017 Forum, LNBIP Vol.297, Barcelona, Spain, September 10-15, 2017</div>
             <div class="tags">
               <span class="tag tag-conf">Conference</span>
               <span class="tag tag-pm">Process Mining</span>
@@ -619,7 +638,7 @@
 
       </div><!-- /2014 -->
 
-      <!-- ═══ Patent ═══ -->
+      <!-- ═══ Patents ═══ -->
       <div class="year-group" id="ypatent">
         <div class="year-label">Patents</div>
 
@@ -654,18 +673,17 @@
   injectFooter();
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
+    btn.addEventListener('click', function() {
+      const filter = this.dataset.filter;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      this.classList.add('active');
 
       document.querySelectorAll('.pub-item').forEach(item => {
         if (filter === 'all') {
           item.classList.remove('hidden');
         } else {
           const tags = item.dataset.tags || '';
-          item.classList.toggle('hidden', !tags.includes(filter));
+          item.classList.toggle('hidden', !tags.split(' ').includes(filter));
         }
       });
 
