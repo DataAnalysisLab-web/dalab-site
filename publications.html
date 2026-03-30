@@ -7,23 +7,56 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .pub-section { padding: 52px 0; }
+
     .filter-bar { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
-    .filter-btn { font-size: 13px; padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border); background: #fff; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
-    .filter-btn.active, .filter-btn:hover { background: var(--red-dark); color: #fff; border-color: var(--red-dark); }
+    .filter-btn {
+      font-size: 13px; padding: 6px 16px; border-radius: 20px;
+      border: 1px solid var(--border); background: #fff;
+      color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover { background: var(--red-dark); color: #fff; border-color: var(--red-dark); }
 
     .year-group { margin-bottom: 40px; }
-    .year-label { font-size: 24px; font-weight: 700; color: var(--red-dark); font-family: Georgia, serif; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+    .year-label {
+      font-size: 24px; font-weight: 700; color: var(--red-dark);
+      font-family: Georgia, serif; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--border);
+    }
 
-    .pub-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #F5EAEA; align-items: flex-start; }
+    .pub-item {
+      display: flex; gap: 16px; padding: 18px 0;
+      border-bottom: 1px solid #F5EAEA; align-items: flex-start;
+    }
     .pub-item:last-child { border-bottom: none; }
-    .pub-num { font-size: 13px; color: var(--text-muted); font-weight: 600; min-width: 28px; padding-top: 2px; }
-    .pub-body .title { font-size: 14.5px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; line-height: 1.45; }
-    .pub-body .authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 3px; }
-    .pub-body .authors strong { color: var(--red-mid); }
-    .pub-body .venue { font-size: 13px; color: #777; font-style: italic; margin-bottom: 6px; }
-    .pub-links { display: flex; gap: 8px; flex-wrap: wrap; }
-    .pub-links a { font-size: 11.5px; padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border); color: var(--red-mid); transition: background 0.2s; }
-    .pub-links a:hover { background: var(--red-light); }
+
+    .pub-body .title {
+      font-size: 14.5px; font-weight: 600; color: var(--text-primary);
+      margin-bottom: 4px; line-height: 1.45;
+    }
+    .pub-body .title a { color: var(--text-primary); }
+    .pub-body .title a:hover { color: var(--red-mid); text-decoration: underline; }
+    .pub-body .authors {
+      font-size: 13px; color: var(--text-secondary); margin-bottom: 3px;
+    }
+    .pub-body .authors strong { color: var(--red-mid); font-weight: 700; }
+    .pub-body .venue { font-size: 13px; color: #777; font-style: italic; margin-bottom: 7px; }
+    .pub-body .tags { display: flex; gap: 7px; flex-wrap: wrap; }
+
+    .tag-journal  { background: var(--red-light); color: var(--red-mid); }
+    .tag-conf     { background: #F0FAF0; color: #2A7A2A; }
+    .tag-patent   { background: #F0F4FF; color: #2040A0; }
+    .tag-award    { background: #FFFBEA; color: #8B6800; }
+    .tag-pm       { background: #EEF4FF; color: #1A4FA0; }
+    .tag-text     { background: #FFF5E0; color: #8B5E00; }
+    .tag-iai      { background: #F5F0FF; color: #5B2DAF; }
+    .tag-ko       { background: #F5F5F5; color: #666; font-size: 10.5px; }
+
+    .note { font-size: 11.5px; color: #AAA; }
+
+    /* Hidden items when filtered */
+    .pub-item.hidden { display: none; }
+    .year-group.empty { display: none; }
   </style>
 </head>
 <body>
@@ -32,7 +65,7 @@
 <div class="page-header">
   <div class="label">Academic Output</div>
   <h1>Publications</h1>
-  <p>Selected research publications from DA-Lab members.</p>
+  <p>Research publications, conference papers, patents and awards from DA-Lab.</p>
 </div>
 
 <main>
@@ -40,93 +73,575 @@
     <div class="container">
 
       <div class="filter-bar">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Journal</button>
-        <button class="filter-btn">Conference</button>
-        <button class="filter-btn">Process Mining</button>
-        <button class="filter-btn">Text Mining</button>
-        <button class="filter-btn">Industrial AI</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="journal">Journal</button>
+        <button class="filter-btn" data-filter="conference">Conference</button>
+        <button class="filter-btn" data-filter="patent">Patent</button>
+        <button class="filter-btn" data-filter="award">Award</button>
+        <button class="filter-btn" data-filter="pm">Process Mining</button>
+        <button class="filter-btn" data-filter="text">Text Mining</button>
+        <button class="filter-btn" data-filter="iai">Industrial AI</button>
       </div>
 
-      <!-- 2025 -->
-      <div class="year-group">
-        <div class="year-label">2025</div>
-        <div class="pub-item">
-          <div class="pub-num">1</div>
-          <div class="pub-body">
-            <div class="title">A Process Mining Approach for Clinical Pathway Optimization Using Electronic Health Records</div>
-            <div class="authors"><strong>Minsu Cho</strong>, Co-Author A, Co-Author B</div>
-            <div class="venue">Expert Systems with Applications, 2025</div>
-            <div class="pub-links">
-              <span class="tag">Journal</span>
-              <span class="tag" style="background:#EEF4FF;color:#1A4FA0;">Process Mining</span>
-              <a href="#">PDF</a>
-              <a href="#">DOI</a>
-            </div>
-          </div>
-        </div>
-        <div class="pub-item">
-          <div class="pub-num">2</div>
-          <div class="pub-body">
-            <div class="title">Declarative Process Constraint Extraction from Natural Language Using Fine-Tuned Large Language Models</div>
-            <div class="authors"><strong>Minsu Cho</strong>, Student A</div>
-            <div class="venue">International Conference on Process Mining (ICPM), 2025</div>
-            <div class="pub-links">
-              <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Conference</span>
-              <span class="tag" style="background:#EEF4FF;color:#1A4FA0;">Process Mining</span>
-              <a href="#">PDF</a>
-              <a href="#">DOI</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2024 -->
-      <div class="year-group">
+      <!-- ═══ 2024 ═══ -->
+      <div class="year-group" id="y2024">
         <div class="year-label">2024</div>
-        <div class="pub-item">
-          <div class="pub-num">3</div>
+
+        <div class="pub-item" data-tags="journal pm">
           <div class="pub-body">
-            <div class="title">Text-Driven Process Model Discovery: Leveraging Pre-trained Language Models for Automated Workflow Extraction</div>
-            <div class="authors"><strong>Minsu Cho</strong>, Co-Author A</div>
-            <div class="venue">Information Systems, 2024</div>
-            <div class="pub-links">
-              <span class="tag">Journal</span>
-              <span class="tag" style="background:#FFF5E0;color:#8B5E00;">Text Mining</span>
-              <a href="#">PDF</a>
-              <a href="#">DOI</a>
+            <div class="title"><a href="#" target="_blank">Enhancing healthcare process analysis through object-centric process mining: Transforming OMOP common data models into object-centric event logs</a></div>
+            <div class="authors">G. Park, Y. Lee, <strong>M. Cho*</strong></div>
+            <div class="venue">Journal of Biomedical Informatics, 156: 104682, 2024</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
             </div>
           </div>
         </div>
-        <div class="pub-item">
-          <div class="pub-num">4</div>
+
+        <div class="pub-item" data-tags="journal text">
           <div class="pub-body">
-            <div class="title">Anomaly Detection in Smart Manufacturing Using Multivariate Time-Series Deep Learning</div>
-            <div class="authors">Student B, <strong>Minsu Cho</strong></div>
-            <div class="venue">Journal of Manufacturing Systems, 2024</div>
-            <div class="pub-links">
-              <span class="tag">Journal</span>
-              <span class="tag" style="background:#F5F0FF;color:#5B2DAF;">Industrial AI</span>
-              <a href="#">PDF</a>
-              <a href="#">DOI</a>
+            <div class="title"><a href="#" target="_blank">Unlocking learner engagement and performance: A multidimensional approach to mapping learners to learning cohorts</a></div>
+            <div class="authors">H. Kim, G. Park, <strong>M. Cho*</strong></div>
+            <div class="venue">Education and Information Technologies, 2024+, Accepted</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-text">Text Mining</span>
             </div>
           </div>
         </div>
-        <div class="pub-item">
-          <div class="pub-num">5</div>
+
+        <div class="pub-item" data-tags="journal text">
           <div class="pub-body">
-            <div class="title">Knowledge Graph Construction from Scientific Literature in the Process Mining Domain</div>
-            <div class="authors">Student C, <strong>Minsu Cho</strong></div>
-            <div class="venue">CIKM 2024</div>
-            <div class="pub-links">
-              <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Conference</span>
-              <span class="tag" style="background:#FFF5E0;color:#8B5E00;">Text Mining</span>
-              <a href="#">PDF</a>
-              <a href="#">DOI</a>
+            <div class="title"><a href="#" target="_blank">Integrating Business Analytics in Educational Decision-Making: A Multifaceted Approach to Enhance Learning Outcomes in EFL Contexts</a></div>
+            <div class="authors"><strong>M. Cho</strong>, J. Kim, J. Kim, K. Park*</div>
+            <div class="venue">Mathematics, 12(5), 620, 2024</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-text">Text Mining</span>
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="pub-item" data-tags="journal pm text">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Leveraging machine learning for automatic topic discovery and forecasting of process mining research: A literature review</a></div>
+            <div class="authors">G. Park, <strong>M. Cho*</strong>, J. Lee</div>
+            <div class="venue">Expert Systems With Applications, 239: 122435, 2024</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="patent">
+          <div class="pub-body">
+            <div class="title">APPARATUS AND METHOD FOR GENERATING PREDICTIVE INFORMATION ON DEVELOPMENT POSSIBILITY OF PROMISING TECHNOLOGY</div>
+            <div class="authors"><strong>M. Cho</strong>, J. Lee</div>
+            <div class="venue">Registered in Korea, 10-2666388, 2024</div>
+            <div class="tags"><span class="tag tag-patent">Patent</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="award">
+          <div class="pub-body">
+            <div class="title">Gold-Prize Award, EdTech Data Analysis Competition</div>
+            <div class="authors"><strong>M. Cho</strong></div>
+            <div class="venue">Korea Society for EdTech, 2023</div>
+            <div class="tags"><span class="tag tag-award">Award</span></div>
+          </div>
+        </div>
+
+      </div><!-- /2024 -->
+
+      <!-- ═══ 2023 ═══ -->
+      <div class="year-group" id="y2023">
+        <div class="year-label">2023</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Toward understanding learning patterns in an open online learning platform using process mining</a></div>
+            <div class="authors">T. Kim, H. Kim, <strong>M. Cho*</strong></div>
+            <div class="venue">Journal of Intelligence and Information Systems, 29(2): 285-301, 2023</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Exploring the potential of OMOP common data model for process mining in healthcare</a></div>
+            <div class="authors">K. Park, <strong>M. Cho</strong>, M. Song*, S. Yoo*, H. Baek, S. Kim, K. Kim</div>
+            <div class="venue">PLOS ONE, 18(1): e0279641, 2023</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title">Representational learning for process models</div>
+            <div class="authors">J. Kim, <strong>M. Cho</strong></div>
+            <div class="venue">Industrial Engineering and Management Science, Seoul, Korea, June 1-3, 2023</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2023 -->
+
+      <!-- ═══ 2022 ═══ -->
+      <div class="year-group" id="y2022">
+        <div class="year-label">2022</div>
+
+        <div class="pub-item" data-tags="journal text">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Exploring the relationship between bias and user satisfaction in recommendation systems: A systematic literature review</a></div>
+            <div class="authors">J. Lee, K. Park, <strong>M. Cho*</strong></div>
+            <div class="venue">Journal of Digital Contents Society, 23(9): 1823-1832, 2022</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-text">Text Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal text">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A Multi-Document Summarization System using Heuristic Clustering: The Case of Semiconductor Industry</a></div>
+            <div class="authors">J.-Y. Kim, J.-E. Lee, J.-E. Lee, Y.-H. Lee, S. Lee, <strong>M. Cho*</strong></div>
+            <div class="venue">Journal of Digital Contents Society, 23(8): 1437-1445, 2022</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-text">Text Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title">Predictions on process performances based on GNN</div>
+            <div class="authors">J. Kim, <strong>M. Cho</strong></div>
+            <div class="venue">Asia Pacific Industrial Engineering &amp; Management Systems 2022, Taichung, Taiwan, November 6-9, 2022</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title">Data-driven Customer Journey Analysis using Process Mining</div>
+            <div class="authors">K. Park, <strong>M. Cho</strong>, Y. Jang, S. Chung, M. Song</div>
+            <div class="venue">Asia Pacific Industrial Engineering &amp; Management Systems 2022, Taichung, Taiwan, November 6-9, 2022</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference text">
+          <div class="pub-body">
+            <div class="title">Development of the real-time false advertisement classification service using XAI</div>
+            <div class="authors">S. Kwak, J. Kim, S. Oh, <strong>M. Cho</strong></div>
+            <div class="venue">Annual Spring Conference of KIPS, Seoul, Korea, May 19-21, 2022</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-text">Text Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title">Learning analytics of Felder-Silverman based on process mining</div>
+            <div class="authors">N. Kwon, J. Kim, <strong>M. Cho</strong>, K. Park</div>
+            <div class="venue">Industrial Engineering and Management Science, Seoul, Korea, June 1-4, 2022</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference text">
+          <div class="pub-body">
+            <div class="title">Automatic blind system for malicious comments on YouTube using Natural Language Processing</div>
+            <div class="authors">J. Lee, J. Lee, Y. Lim, K. Park, <strong>M. Cho</strong></div>
+            <div class="venue">HCI Korea 2022, Seoul, Korea, February 13-16, 2022</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-text">Text Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2022 -->
+
+      <!-- ═══ 2021 ═══ -->
+      <div class="year-group" id="y2021">
+        <div class="year-label">2021</div>
+
+        <div class="pub-item" data-tags="journal iai">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Quality-Aware Resource Model Discovery</a></div>
+            <div class="authors"><strong>M. Cho</strong>, G. Park, M. Song*, J. Lee, E. Kim</div>
+            <div class="venue">Applied Sciences, 11(12): 5730, 2021</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-iai">Industrial AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal iai">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Survey of Current Status of Casting Industry in Korea</a></div>
+            <div class="authors"><strong>M. Cho</strong>, J. Lee, S.-H. Lee, S.-M. Lee*</div>
+            <div class="venue">Journal of Korea Foundry Society, 41(2): 144-152, 2021</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-iai">Industrial AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal iai pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Discovery of Resource-oriented Transition Systems for Yield Enhancement in Semiconductor Manufacturing</a></div>
+            <div class="authors"><strong>M. Cho</strong>, G. Park, M. Song*, J. Lee, B. Lee, E. Kim</div>
+            <div class="venue">IEEE Transactions on Semiconductor Manufacturing, 34(1): 17-24, 2021</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-iai">Industrial AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference text">
+          <div class="pub-body">
+            <div class="title">Game recommendation systems using Word2Vec and KoBART</div>
+            <div class="authors">S. Choi, J. Kim, <strong>M. Cho</strong></div>
+            <div class="venue">Industrial Engineering and Management Science, Seoul, Korea, November 12, 2021</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-text">Text Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2021 -->
+
+      <!-- ═══ 2020 ═══ -->
+      <div class="year-group" id="y2020">
+        <div class="year-label">2020</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Process Mining-Supported Emergency Room Process Performance Indicators</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song*, J. Park, S.-R. Yeom, I.-J. Wang, B.-K. Choi</div>
+            <div class="venue">International Journal of Environmental Research and Public Health, 17(17): 6290, 2020</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Developing Data-driven Clinical Pathways using Electronic Health Records: The Cases of Total Laparoscopic Hysterectomy and Rotator Cuff Tears</a></div>
+            <div class="authors"><strong>M. Cho†</strong>, K. Kim†, J. Lim, H. Baek, S. Kim, H. Hwang, M. Song*, S. Yoo* <span class="note">(†: equal contribution)</span></div>
+            <div class="venue">International Journal of Medical Informatics, 133:104015, 2020</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Deriving a sophisticated clinical pathway based on patient conditions from electronic health record data</a></div>
+            <div class="authors">J. Lim, K. Kim, H. Baek, S. Kim, H. Hwang, S. Yoo, M. Song</div>
+            <div class="venue">PODS4H 2020 @ ICPM 2020, Padua, Italy, October 4-9, 2020</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="award">
+          <div class="pub-body">
+            <div class="title">Best Paper Award</div>
+            <div class="authors"><strong>M. Cho</strong></div>
+            <div class="venue">Korea Society for Quality in Health Care, 2020</div>
+            <div class="tags"><span class="tag tag-award">Award</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="award">
+          <div class="pub-body">
+            <div class="title">Best Paper Award</div>
+            <div class="authors"><strong>M. Cho</strong></div>
+            <div class="venue">International Workshop on Process-Oriented Data Science for Healthcare (PODS4H 2020), October 5, 2020</div>
+            <div class="tags"><span class="tag tag-award">Award</span></div>
+          </div>
+        </div>
+
+      </div><!-- /2020 -->
+
+      <!-- ═══ 2019 ═══ -->
+      <div class="year-group" id="y2019">
+        <div class="year-label">2019</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">An Evidence-based Decision Support Framework for Clinician Medical Scheduling</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song*, S. Yoo, H.A. Reijers</div>
+            <div class="venue">IEEE Access, 7:15239-15249, 2019</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Developing Process Performance Indicators for Emergency Room Processes</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song, S.-R. Yeom, I.-J. Wang, B.-K. Choi</div>
+            <div class="venue">PODS4H 2019 @ BPM 2019, Vienna, Austria, September 1-6, 2019</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title">Development of Clinical Pathways using Electronic Health Records</div>
+            <div class="authors"><strong>M. Cho</strong>, J. Lim, M. Song, S. Yoo, K. Kim, H. Baek</div>
+            <div class="venue">The Korea Society of Medical Informatics (대한의료정보학회), Seoul, Korea, July 11-12, 2019</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-ko">Korean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="award">
+          <div class="pub-body">
+            <div class="title">Best Paper Award</div>
+            <div class="authors"><strong>M. Cho</strong></div>
+            <div class="venue">The 2019 Korean Society of Medical Informatics Spring Conference, July 12, 2019</div>
+            <div class="tags"><span class="tag tag-award">Award</span></div>
+          </div>
+        </div>
+
+      </div><!-- /2019 -->
+
+      <!-- ═══ 2018 ═══ -->
+      <div class="year-group" id="y2018">
+        <div class="year-label">2018</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Analysis of length of hospital stay using electronic health records: A statistical and data mining approach</a></div>
+            <div class="authors">H. Baek†, <strong>M. Cho†</strong>, S. Kim, H. Hwang, M. Song*, S. Yoo* <span class="note">(†: equal contribution)</span></div>
+            <div class="venue">PLOS ONE, 13(4):e0195901, 2018</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2018 -->
+
+      <!-- ═══ 2017 ═══ -->
+      <div class="year-group" id="y2017">
+        <div class="year-label">2017</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A Development on a Predictive Model for Buying Unemployment Insurance Program Based on Public Data</a></div>
+            <div class="authors"><strong>M. Cho</strong>, D. Kim, M. Song*, G. Kim, C. Jung, K. Kim</div>
+            <div class="venue">The Korean Journal of BigData, 2(2):17-31, 2017</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Evaluating the effect of best practices for business process redesign: An evidence-based approach based on process mining techniques</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song*, M. Comuzzi, S. Yoo</div>
+            <div class="venue">Decision Support Systems, 104:92-103, 2017</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A New Framework for Defining Realistic SLAs: An Evidence-Based Approach</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song, C. Müller, P. Fernandez, A. del-Rio-Ortega, M. Resinas, A. Ruiz-Cortés</div>
+            <div class="venue">BPM 2017 Forum, Lecture Notes in Business Information Processing, Vol. 297, Barcelona, Spain, September 10-15, 2017</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Devising an SLA-Aware Methodology to Improve Process Performance</a></div>
+            <div class="authors">C. Müller, <strong>M. Cho</strong>, P. Fernandez, M. Song, M. Resinas, A. Ruiz-Cortés</div>
+            <div class="venue">Jornadas de Ciencia e Ingenieria de Servicios, Spain, July 19-21, 2017</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2017 -->
+
+      <!-- ═══ 2016 ═══ -->
+      <div class="year-group" id="y2016">
+        <div class="year-label">2016</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Assessment of Hospital Processes Using a Process Mining Technique: Outpatient Process Analysis at a Tertiary Hospital</a></div>
+            <div class="authors">S. Yoo, <strong>M. Cho</strong>, E. Kim, S. Kim, Y. Sim, D. Yoo, H. Hwang, M. Song*</div>
+            <div class="venue">International Journal of Medical Informatics, 88:34-43, 2016</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2016 -->
+
+      <!-- ═══ 2015 ═══ -->
+      <div class="year-group" id="y2015">
+        <div class="year-label">2015</div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A Systematic Methodology for Outpatient Process Analysis based on Process Mining</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song*, S. Yoo</div>
+            <div class="venue">International Journal of Industrial Engineering: Theory, Applications, and Practice, 22(4):480-493, 2015</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="journal pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">Conformance Analysis of Clinical Pathway Using Electronic Health Record Data</a></div>
+            <div class="authors">S. Yoo, <strong>M. Cho</strong>, S. Kim, E. Kim, S. Park, K. Kim, H. Hwang, M. Song*</div>
+            <div class="venue">Healthcare Informatics Research, 21(3):161-166, 2015</div>
+            <div class="tags">
+              <span class="tag tag-journal">Journal</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="conference pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A Systematic Methodology for Outpatient Process Analysis Based on Process Mining</a></div>
+            <div class="authors"><strong>M. Cho</strong>, M. Song, S. Yoo</div>
+            <div class="venue">Asia Pacific Business Process Management, LNBIP Vol.181, pp.31-42, Brisbane, Australia, July 3-4, 2014</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="award">
+          <div class="pub-body">
+            <div class="title">Third-Prize Award, Process Mining Case Competition</div>
+            <div class="authors"><strong>M. Cho</strong></div>
+            <div class="venue">The 2015 Asia-Pacific Conference on Business Process Management, June 26, 2015</div>
+            <div class="tags"><span class="tag tag-award">Award</span></div>
+          </div>
+        </div>
+
+      </div><!-- /2015 -->
+
+      <!-- ═══ 2014 ═══ -->
+      <div class="year-group" id="y2014">
+        <div class="year-label">2014</div>
+
+        <div class="pub-item" data-tags="conference iai pm">
+          <div class="pub-body">
+            <div class="title"><a href="#" target="_blank">A System Architecture for Manufacturing Process Analysis based on Big Data and Process Mining Techniques</a></div>
+            <div class="authors">H. Yang, M. Park, <strong>M. Cho</strong>, M. Song, S. Kim</div>
+            <div class="venue">IEEE International Conference on Big Data, pp.1024-1029, Washington D.C, USA, October 27-30, 2014</div>
+            <div class="tags">
+              <span class="tag tag-conf">Conference</span>
+              <span class="tag tag-pm">Process Mining</span>
+              <span class="tag tag-iai">Industrial AI</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /2014 -->
+
+      <!-- ═══ Patent ═══ -->
+      <div class="year-group" id="ypatent">
+        <div class="year-label">Patents</div>
+
+        <div class="pub-item" data-tags="patent">
+          <div class="pub-body">
+            <div class="title">APPARATUS AND METHOD FOR GENERATING PREDICTIVE INFORMATION ON DEVELOPMENT POSSIBILITY OF PROMISING TECHNOLOGY</div>
+            <div class="authors"><strong>M. Cho</strong>, J. Lee</div>
+            <div class="venue">Registered in Korea, 10-2666388, 2024</div>
+            <div class="tags"><span class="tag tag-patent">Patent</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-tags="patent">
+          <div class="pub-body">
+            <div class="title">PROCESS SIMULATION MODEL DISCOVERY SYSTEM OF OUTPATIENT CONSULTATION AND PROCESS SIMULATION MODEL DISCOVERY METHOD</div>
+            <div class="authors">M. Song, <strong>M. Cho</strong></div>
+            <div class="venue">Registered in Korea (10-1601916, 2016) · Pending in the United States (20150317450, 2015)</div>
+            <div class="tags"><span class="tag tag-patent">Patent</span></div>
+          </div>
+        </div>
+
+      </div><!-- /patent -->
 
     </div>
   </div>
@@ -137,10 +652,27 @@
 <script>
   injectNav('Publications');
   injectFooter();
+
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      document.querySelectorAll('.pub-item').forEach(item => {
+        if (filter === 'all') {
+          item.classList.remove('hidden');
+        } else {
+          const tags = item.dataset.tags || '';
+          item.classList.toggle('hidden', !tags.includes(filter));
+        }
+      });
+
+      document.querySelectorAll('.year-group').forEach(group => {
+        const visible = group.querySelectorAll('.pub-item:not(.hidden)').length > 0;
+        group.classList.toggle('empty', !visible);
+      });
     });
   });
 </script>
