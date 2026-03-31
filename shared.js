@@ -100,7 +100,7 @@ function injectFooter() {
           <h4>Contact</h4>
           <a href="mailto:mcho@kw.ac.kr">Professor | mcho@kw.ac.kr</a>
           <a href="tel:+8229408454">Tel: +82-2-940-8454</a>
-          <a href="https://kw.ac.kr" target="_blank">Kwangwoon University</a>
+          <a href="https://www.kw.ac.kr/ko/" target="_blank">Kwangwoon University</a>
         </div>
         <div class="footer-col">
           <h4>Links</h4>
