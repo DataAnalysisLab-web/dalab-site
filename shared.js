@@ -65,8 +65,8 @@ function injectNav(activePage) {
   document.querySelector('nav').innerHTML = `
     <div style="display:flex;align-items:center;gap:0;">
       <!-- 광운대학교 로고 -->
-      <a href="https://www.kw.ac.kr/ko/" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
-        <img src="images1/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
+      <a href="http://kw.ac.kr" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
+        <img src="images/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
       </a>
       <!-- 구분선 -->
       <div style="width:1px;height:28px;background:rgba(255,255,255,0.2);margin-right:20px;"></div>
@@ -88,8 +88,7 @@ function injectFooter() {
           ${FOOTER_SVG}
           <span class="footer-logo-text">DA-Lab</span>
         </div>
-        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence / Dept. of AI Applications
-Kwangwoon University</p>
+        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence /<br>Dept. of Applied Artificial Intelligence<br>Kwangwoon University</p>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-cols">
@@ -112,7 +111,7 @@ Kwangwoon University</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
+      <span class="footer-copy">© 2025 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
       <div class="footer-socials">
         <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
         <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
