@@ -61,11 +61,21 @@ function injectNav(activePage) {
   const links = PAGES.map(p =>
     `<a href="${p.href}" class="${p.label === activePage ? 'active' : ''}">${p.label}</a>`
   ).join('');
+
   document.querySelector('nav').innerHTML = `
-    <a href="index.html" class="nav-logo">
-      ${NAV_SVG}
-      <span class="nav-logo-text">DA-Lab</span>
-    </a>
+    <div style="display:flex;align-items:center;gap:0;">
+      <!-- 광운대학교 로고 -->
+      <a href="http://kw.ac.kr" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
+        <img src="images/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
+      </a>
+      <!-- 구분선 -->
+      <div style="width:1px;height:28px;background:rgba(255,255,255,0.2);margin-right:20px;"></div>
+      <!-- DA-Lab 로고 -->
+      <a href="index.html" class="nav-logo">
+        ${NAV_SVG}
+        <span class="nav-logo-text">DA-Lab</span>
+      </a>
+    </div>
     <div class="nav-links">${links}</div>
   `;
 }
@@ -90,7 +100,7 @@ function injectFooter() {
           <h4>Contact</h4>
           <a href="mailto:mcho@kw.ac.kr">Professor | mcho@kw.ac.kr</a>
           <a href="tel:+8229408454">Tel: +82-2-940-8454</a>
-          <a href="https://www.kw.ac.kr/ko/" target="_blank">Kwangwoon University</a>
+          <a href="http://kw.ac.kr" target="_blank">Kwangwoon University</a>
         </div>
         <div class="footer-col">
           <h4>Links</h4>
@@ -101,7 +111,7 @@ function injectFooter() {
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
+      <span class="footer-copy">© 2025 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
       <div class="footer-socials">
         <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
         <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
