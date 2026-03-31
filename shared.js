@@ -88,7 +88,7 @@ function injectFooter() {
           ${FOOTER_SVG}
           <span class="footer-logo-text">DA-Lab</span>
         </div>
-        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence<br>Kwangwoon University</p>
+        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence / Dept. of AI Applications<br>Kwangwoon University</p>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-cols">
