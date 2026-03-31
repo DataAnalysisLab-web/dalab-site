@@ -1,24 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teaching · DA-Lab</title>
+  <!-- Pretendard: 한국어 + 영어 모두 지원 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Pretendard를 teaching 페이지 전체에 적용 */
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
     .teaching-section { padding: 52px 0; }
 
     .level-group { margin-bottom: 52px; }
     .level-title {
-      font-size: 20px; font-weight: 700; color: #fff;
-      background: var(--red-dark); padding: 12px 20px;
-      border-radius: 8px; margin-bottom: 24px;
-      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--red-dark);
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-family: 'Pretendard', sans-serif;
+      letter-spacing: -0.3px;
     }
 
     .course-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden; margin-bottom: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 18px;
       transition: box-shadow 0.2s, border-color 0.2s;
     }
     .course-card:hover { box-shadow: 0 4px 16px rgba(62,0,8,0.07); border-color: #D4A0A0; }
@@ -28,23 +44,44 @@
       border-bottom: 1px solid var(--border);
       background: var(--red-tint);
     }
-    .course-name-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .course-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
     .course-name {
-      font-size: 17px; font-weight: 700; color: var(--red-dark);
-      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--red-dark);
+      font-family: 'Pretendard', sans-serif;
+      letter-spacing: -0.4px;
+      line-height: 1.4;
     }
     .course-semesters {
-      font-size: 12px; color: var(--text-muted);
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 4px; padding: 2px 9px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 9px;
+      font-family: 'Pretendard', sans-serif;
+      white-space: nowrap;
     }
     .course-desc {
-      font-size: 13.5px; color: var(--text-secondary);
-      line-height: 1.82; padding: 18px 24px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      padding: 18px 24px;
+      font-family: 'Pretendard', sans-serif;
+      word-break: keep-all;
+      letter-spacing: -0.2px;
     }
 
     @media (max-width: 768px) {
       .course-name-row { flex-direction: column; gap: 6px; }
+      .course-name { font-size: 15px; }
     }
   </style>
 </head>
@@ -61,7 +98,7 @@
   <div class="teaching-section">
     <div class="container">
 
-      <!-- ═══ UNDERGRADUATE ═══ -->
+      <!-- UNDERGRADUATE -->
       <div class="level-group">
         <div class="level-title">Undergraduate</div>
 
@@ -69,7 +106,7 @@
           <div class="course-header">
             <div class="course-name-row">
               <span class="course-name">AI Mathematics (AI수학)</span>
-              <span class="course-semesters">2021~2026-Spring</span>
+              <span class="course-semesters">2021-Spring · 2022-Spring · 2023-Spring · 2024-Spring</span>
             </div>
           </div>
           <div class="course-desc">
@@ -81,7 +118,7 @@
           <div class="course-header">
             <div class="course-name-row">
               <span class="course-name">Text Mining (텍스트마이닝)</span>
-              <span class="course-semesters">2021~2026-Spring</span>
+              <span class="course-semesters">2021-Spring · 2022-Spring · 2023-Spring · 2024-Spring</span>
             </div>
           </div>
           <div class="course-desc">
@@ -93,7 +130,7 @@
           <div class="course-header">
             <div class="course-name-row">
               <span class="course-name">Discrete Mathematics (이산수학)</span>
-              <span class="course-semesters">2021~2024-Fall</span>
+              <span class="course-semesters">2021-Fall · 2022-Fall · 2023-Fall</span>
             </div>
           </div>
           <div class="course-desc">
@@ -105,7 +142,7 @@
           <div class="course-header">
             <div class="course-name-row">
               <span class="course-name">Data Analytics (데이터애널리틱스)</span>
-              <span class="course-semesters">2021~2025-Fall</span>
+              <span class="course-semesters">2021-Fall · 2022-Fall · 2023-Fall</span>
             </div>
           </div>
           <div class="course-desc">
@@ -115,7 +152,7 @@
 
       </div>
 
-      <!-- ═══ GRADUATE ═══ -->
+      <!-- GRADUATE -->
       <div class="level-group">
         <div class="level-title">Graduate</div>
 
@@ -123,7 +160,7 @@
           <div class="course-header">
             <div class="course-name-row">
               <span class="course-name">Process Mining (프로세스마이닝)</span>
-              <span class="course-semesters">2023-Spring · 2026-Spring</span>
+              <span class="course-semesters">2023-Spring</span>
             </div>
           </div>
           <div class="course-desc">
