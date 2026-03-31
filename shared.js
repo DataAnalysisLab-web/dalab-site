@@ -111,7 +111,7 @@ function injectFooter() {
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
+      <span class="footer-copy">© 2026 Data Analytics Lab., Kwangwoon University. All rights reserved.</span>
       <div class="footer-socials">
         <a href="https://scholar.google.co.kr/citations?user=HwE3cfoAAAAJ&hl=ko" target="_blank">Google Scholar</a>
         <a href="https://www.linkedin.com/in/mscho1990/" target="_blank">LinkedIn</a>
