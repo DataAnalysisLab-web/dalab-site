@@ -1,16 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DA-Lab · Data Analytics Laboratory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* WELCOME - 가운데 정렬 */
+    /* WELCOME */
     .welcome {
       background: #fff;
-      padding: 56px 48px;
+      padding: 64px 48px;
       border-bottom: 1px solid var(--border);
     }
     .welcome-inner {
@@ -22,27 +24,66 @@
       justify-content: center;
     }
     .welcome-text { flex: 1; max-width: 520px; }
-    .welcome-label { font-size: 11px; color: #AAA; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; }
-    .welcome-h1 { font-size: 40px; font-weight: 700; color: var(--text-primary); line-height: 1.15; margin-bottom: 18px; font-family: Georgia, serif; }
-    .welcome-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+
+    .welcome-label {
+      font-size: 11px;
+      color: #AAA;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .welcome-h1 {
+      font-size: 46px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.12;
+      margin-bottom: 22px;
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.5px;
+    }
+
+    .welcome-desc {
+      font-size: 15.5px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .welcome-desc strong {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      color: var(--red-mid);
+    }
+
+    .welcome-affil {
+      margin-top: 20px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.2px;
+    }
 
     /* RESEARCH CARDS */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .r-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 18px; text-align: center; transition: box-shadow 0.2s, border-color 0.2s; }
     .r-card:hover { border-color: #D4A0A0; box-shadow: 0 4px 16px rgba(62,0,8,0.07); }
-    .r-card .ct { font-size: 14px; color: var(--red-dark); font-weight: 700; margin: 12px 0 6px; }
-    .r-card .cd { font-size: 12px; color: #666; line-height: 1.65; }
+    .r-card .ct { font-size: 14px; color: var(--red-dark); font-weight: 600; margin: 12px 0 6px; font-family: 'Inter', sans-serif; }
+    .r-card .cd { font-size: 12px; color: #666; line-height: 1.65; font-family: 'Inter', sans-serif; }
 
     /* NEWS */
     .news-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #F5EAEA; }
     .news-item:last-child { border-bottom: none; }
-    .news-body .title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; line-height: 1.4; }
-    .news-body .date  { font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; }
-    .news-body .desc  { font-size: 12.5px; color: #666; line-height: 1.55; }
+    .news-body .title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; line-height: 1.4; font-family: 'Inter', sans-serif; }
+    .news-body .date  { font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+    .news-body .desc  { font-size: 12.5px; color: #666; line-height: 1.55; font-family: 'Inter', sans-serif; }
 
     @media (max-width: 768px) {
-      .welcome { padding: 36px 20px; }
+      .welcome { padding: 40px 20px; }
       .welcome-inner { flex-direction: column; gap: 32px; }
+      .welcome-h1 { font-size: 34px; }
       .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -56,7 +97,8 @@
     <div class="welcome-text">
       <p class="welcome-label">Welcome to</p>
       <h1 class="welcome-h1">Data Analytics Lab.</h1>
-      <p class="welcome-desc">DA Lab. bridges the gap between data science and practical real-world challenges. Our research focuses on process innovation and text analytics based on process mining, machine learning, and natural language processing.<br><br>School of Information Convergence, Kwangwoon University.</p>
+      <p class="welcome-desc">DA Lab. bridges the gap between data science and practical real-world challenges. Our research focuses on <strong>process innovation</strong> and <strong>text analytics</strong> based on process mining, machine learning, and natural language processing.</p>
+      <p class="welcome-affil">School of Information Convergence · Kwangwoon University</p>
     </div>
     <svg width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0;">
       <defs>
@@ -84,34 +126,106 @@
 
 <main>
 
-  <!-- RESEARCH CARDS (strip 제거 후 바로 배치) -->
+  <!-- RESEARCH CARDS -->
   <section style="background: var(--red-tint); padding: 48px 0; border-bottom: 1px solid var(--border);">
     <div class="container">
       <div class="section-label">Research Areas</div>
       <div class="cards-grid">
+        <!-- Process Mining card -->
         <div class="r-card">
-          <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c1d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c1r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
-            <line x1="9" y1="32" x2="25" y2="14" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="32" x2="25" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="14" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="25" y1="50" x2="42" y2="32" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="42" y1="32" x2="57" y2="32" stroke="#BB0018" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="9" cy="32" r="6.5" fill="url(#c1d)"/><circle cx="25" cy="14" r="5" fill="url(#c1d)"/><circle cx="25" cy="50" r="5" fill="url(#c1d)"/><circle cx="42" cy="32" r="5.5" fill="url(#c1d)"/><circle cx="57" cy="32" r="7.5" fill="url(#c1r)"/>
+          <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="14" width="22" height="72" rx="3" fill="#1E3A5F" opacity="0.12"/>
+            <rect x="3" y="14" width="22" height="72" rx="3" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+            <rect x="7" y="22" width="14" height="5" rx="1.5" fill="#4472C4"/>
+            <rect x="7" y="31" width="10" height="5" rx="1.5" fill="#1E3A5F"/>
+            <rect x="7" y="40" width="14" height="5" rx="1.5" fill="#8B0018"/>
+            <rect x="7" y="49" width="10" height="5" rx="1.5" fill="#1E3A5F"/>
+            <rect x="7" y="58" width="13" height="5" rx="1.5" fill="#4472C4"/>
+            <rect x="7" y="67" width="11" height="5" rx="1.5" fill="#1E3A5F"/>
+            <rect x="7" y="76" width="12" height="5" rx="1.5" fill="#1E3A5F"/>
+            <line x1="29" y1="50" x2="34" y2="50" stroke="#8B0018" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 31 46.5 L 37 50 L 31 53.5" fill="none" stroke="#8B0018" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="45" cy="50" r="5.5" fill="none" stroke="#1E3A5F" stroke-width="2.2"/>
+            <circle cx="45" cy="50" r="2.5" fill="#4472C4"/>
+            <line x1="50.5" y1="50" x2="53" y2="50" stroke="#1E3A5F" stroke-width="1.8"/>
+            <rect x="53" y="44.5" width="9" height="11" rx="2" fill="#1E3A5F"/>
+            <line x1="62" y1="50" x2="65" y2="50" stroke="#1E3A5F" stroke-width="1.8"/>
+            <circle cx="70" cy="50" r="5.5" fill="none" stroke="#1E3A5F" stroke-width="2.2"/>
+            <path d="M 70 44.5 L 70 33" stroke="#1E3A5F" stroke-width="1.5" fill="none"/>
+            <rect x="65.5" y="25" width="9" height="8" rx="1.5" fill="#4472C4" opacity="0.7"/>
+            <line x1="74.5" y1="29" x2="78" y2="29" stroke="#4472C4" stroke-width="1.5"/>
+            <circle cx="82" cy="29" r="3.5" fill="none" stroke="#4472C4" stroke-width="1.5"/>
+            <line x1="75.5" y1="50" x2="78" y2="50" stroke="#1E3A5F" stroke-width="1.8"/>
+            <rect x="78" y="44.5" width="9" height="11" rx="2" fill="#1E3A5F"/>
+            <line x1="87" y1="50" x2="89.5" y2="50" stroke="#1E3A5F" stroke-width="1.8"/>
+            <circle cx="94" cy="50" r="4.5" fill="none" stroke="#1E3A5F" stroke-width="2.2"/>
+            <circle cx="94" cy="50" r="2.2" fill="#8B0018"/>
           </svg>
           <div class="ct">Process Mining</div>
           <div class="cd">Discovering process models from event logs and optimizing real-world workflows with data-driven insights.</div>
         </div>
+
+        <!-- Text Mining card -->
         <div class="r-card">
-          <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c2d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c2r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
-            <line x1="32" y1="32" x2="32" y2="9" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="53" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/><line x1="32" y1="32" x2="11" y2="20" stroke="#7B0014" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="32" cy="9" r="5.5" fill="url(#c2d)"/><circle cx="53" cy="20" r="5.5" fill="url(#c2d)"/><circle cx="50" cy="50" r="5.5" fill="url(#c2d)"/><circle cx="14" cy="50" r="5.5" fill="url(#c2d)"/><circle cx="11" cy="20" r="5.5" fill="url(#c2d)"/>
-            <circle cx="32" cy="32" r="9" fill="url(#c2r)"/>
+          <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="15" width="26" height="70" rx="3" fill="#1E3A5F" opacity="0.1"/>
+            <rect x="4" y="15" width="26" height="70" rx="3" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+            <polyline points="22,15 30,15 30,23" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+            <path d="M 22 15 L 22 23 L 30 23" fill="#1E3A5F" opacity="0.2"/>
+            <line x1="10" y1="32" x2="26" y2="32" stroke="#4472C4" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="10" y1="40" x2="24" y2="40" stroke="#1E3A5F" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="10" y1="48" x2="26" y2="48" stroke="#8B0018" stroke-width="3" stroke-linecap="round"/>
+            <line x1="10" y1="56" x2="22" y2="56" stroke="#1E3A5F" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="10" y1="64" x2="25" y2="64" stroke="#4472C4" stroke-width="2" stroke-linecap="round"/>
+            <line x1="10" y1="72" x2="23" y2="72" stroke="#1E3A5F" stroke-width="2" stroke-linecap="round"/>
+            <line x1="34" y1="50" x2="38" y2="50" stroke="#8B0018" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 35 46.5 L 40 50 L 35 53.5" fill="none" stroke="#8B0018" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="42" y="41" width="8" height="8" rx="1.5" fill="#4472C4"/>
+            <rect x="42" y="51" width="8" height="8" rx="1.5" fill="#4472C4" opacity="0.65"/>
+            <rect x="53" y="41" width="8" height="8" rx="1.5" fill="#4472C4" opacity="0.85"/>
+            <rect x="53" y="51" width="8" height="8" rx="1.5" fill="#4472C4" opacity="0.5"/>
+            <rect x="64" y="41" width="8" height="8" rx="1.5" fill="#4472C4" opacity="0.7"/>
+            <rect x="64" y="51" width="8" height="8" rx="1.5" fill="#4472C4" opacity="0.35"/>
+            <line x1="75" y1="50" x2="78" y2="50" stroke="#8B0018" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 76 47 L 81 50 L 76 53" fill="none" stroke="#8B0018" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="87" cy="42" r="4" fill="#1E3A5F"/>
+            <circle cx="87" cy="52" r="4" fill="#1E3A5F"/>
+            <circle cx="87" cy="62" r="4" fill="#1E3A5F"/>
+            <line x1="91" y1="42" x2="93" y2="50" stroke="#1E3A5F" stroke-width="1.5"/>
+            <line x1="91" y1="52" x2="93" y2="52" stroke="#1E3A5F" stroke-width="1.5"/>
+            <line x1="91" y1="62" x2="93" y2="54" stroke="#1E3A5F" stroke-width="1.5"/>
+            <circle cx="95" cy="52" r="4.5" fill="#8B0018"/>
           </svg>
           <div class="ct">Text Mining</div>
           <div class="cd">Extracting meaningful knowledge from unstructured text using NLP and machine learning methods.</div>
         </div>
+
+        <!-- Industrial AI card: factory robot arm + process data -->
         <div class="r-card">
-          <svg width="64" height="64" viewBox="0 0 64 64"><defs><radialGradient id="c3d" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#C82038"/><stop offset="45%" stop-color="#620010"/><stop offset="100%" stop-color="#1A0003"/></radialGradient><radialGradient id="c3r" cx="32%" cy="26%" r="70%"><stop offset="0%" stop-color="#FF9090"/><stop offset="35%" stop-color="#FF1515"/><stop offset="100%" stop-color="#7A0000"/></radialGradient></defs>
-            <line x1="32" y1="6" x2="56" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="19" x2="56" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="56" y1="45" x2="32" y2="58" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="32" y1="58" x2="8" y2="45" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="45" x2="8" y2="19" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><line x1="8" y1="19" x2="32" y2="6" stroke="#7B0014" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-            <line x1="32" y1="32" x2="32" y2="6" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="56" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="32" y2="58" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="45" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><line x1="32" y1="32" x2="8" y2="19" stroke="#CC0018" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
-            <circle cx="32" cy="6" r="4.5" fill="url(#c3d)"/><circle cx="56" cy="19" r="4.5" fill="url(#c3d)"/><circle cx="56" cy="45" r="4.5" fill="url(#c3d)"/><circle cx="32" cy="58" r="4.5" fill="url(#c3d)"/><circle cx="8" cy="45" r="4.5" fill="url(#c3d)"/><circle cx="8" cy="19" r="4.5" fill="url(#c3d)"/>
-            <circle cx="32" cy="32" r="8" fill="url(#c3r)"/>
+          <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="83" width="90" height="4" rx="2" fill="#1E3A5F"/>
+            <line x1="14" y1="83" x2="11" y2="87" stroke="#1E3A5F" stroke-width="1" opacity="0.35"/>
+            <line x1="24" y1="83" x2="21" y2="87" stroke="#1E3A5F" stroke-width="1" opacity="0.35"/>
+            <line x1="34" y1="83" x2="31" y2="87" stroke="#1E3A5F" stroke-width="1" opacity="0.35"/>
+            <rect x="37" y="68" width="16" height="15" rx="2" fill="#1E3A5F"/>
+            <rect x="35" y="64" width="20" height="7" rx="2" fill="#4472C4"/>
+            <line x1="45" y1="64" x2="27" y2="40" stroke="#1E3A5F" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="27" cy="40" r="5.5" fill="#4472C4"/>
+            <circle cx="27" cy="40" r="2.5" fill="#1E3A5F"/>
+            <line x1="27" y1="40" x2="57" y2="23" stroke="#1E3A5F" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="57" cy="23" r="4.5" fill="#4472C4"/>
+            <circle cx="57" cy="23" r="2" fill="#1E3A5F"/>
+            <line x1="57" y1="23" x2="57" y2="13" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/>
+            <line x1="52" y1="13" x2="55" y2="18" stroke="#1E3A5F" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="62" y1="13" x2="59" y2="18" stroke="#1E3A5F" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="53" y="7" width="8" height="6" rx="1.5" fill="#4472C4" opacity="0.65"/>
+            <circle cx="72" cy="19" r="5.5" fill="#8B0018"/>
+            <circle cx="72" cy="19" r="2.5" fill="white" opacity="0.25"/>
+            <path d="M 62 21 Q 68 17 67 19" stroke="#8B0018" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+            <rect x="68" y="57" width="6" height="26" rx="1.5" fill="#4472C4" opacity="0.6"/>
+            <rect x="77" y="48" width="6" height="35" rx="1.5" fill="#8B0018" opacity="0.85"/>
+            <rect x="86" y="53" width="6" height="30" rx="1.5" fill="#4472C4" opacity="0.75"/>
+            <line x1="72" y1="25" x2="72" y2="53" stroke="#8B0018" stroke-width="1.2" stroke-dasharray="2.5 2" opacity="0.55"/>
           </svg>
           <div class="ct">Industrial AI</div>
           <div class="cd">Applying AI and machine learning to industrial processes and smart manufacturing systems.</div>
