@@ -65,7 +65,7 @@ function injectNav(activePage) {
   document.querySelector('nav').innerHTML = `
     <div style="display:flex;align-items:center;gap:0;">
       <!-- 광운대학교 로고 -->
-      <a href="http://kw.ac.kr" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
+      <a href="https://www.kw.ac.kr/ko/" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
         <img src="images1/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
       </a>
       <!-- 구분선 -->
