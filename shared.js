@@ -62,22 +62,44 @@ function injectNav(activePage) {
     `<a href="${p.href}" class="${p.label === activePage ? 'active' : ''}">${p.label}</a>`
   ).join('');
 
+  const mobileLinks = PAGES.map(p =>
+    `<a href="${p.href}" class="mobile-nav-link${p.label === activePage ? ' active' : ''}">${p.label}</a>`
+  ).join('');
+
   document.querySelector('nav').innerHTML = `
     <div style="display:flex;align-items:center;gap:0;">
-      <!-- 광운대학교 로고 -->
-      <a href="http://kw.ac.kr" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
+      <a href="https://www.kw.ac.kr/ko/" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
         <img src="images1/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
       </a>
-      <!-- 구분선 -->
       <div style="width:1px;height:28px;background:rgba(255,255,255,0.2);margin-right:20px;"></div>
-      <!-- DA-Lab 로고 -->
       <a href="index.html" class="nav-logo">
         ${NAV_SVG}
         <span class="nav-logo-text">DA-Lab</span>
       </a>
     </div>
     <div class="nav-links">${links}</div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   `;
+
+  // mobile menu overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'mobile-menu-overlay';
+  overlay.id = 'mobileMenuOverlay';
+  overlay.innerHTML = `<div class="mobile-menu-panel">${mobileLinks}</div>`;
+  document.body.appendChild(overlay);
+
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    const isOpen = overlay.classList.toggle('open');
+    document.getElementById('navHamburger').classList.toggle('open', isOpen);
+  });
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('open');
+      document.getElementById('navHamburger').classList.remove('open');
+    }
+  });
 }
 
 function injectFooter() {
