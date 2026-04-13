@@ -53,6 +53,7 @@ const PAGES = [
   { href: 'members.html',      label: 'Members' },
   { href: 'research.html',     label: 'Research' },
   { href: 'publications.html', label: 'Publications' },
+  { href: 'projects.html',     label: 'Projects' },
   { href: 'teaching.html',     label: 'Teaching' },
   { href: 'contact.html',      label: 'Contact' },
 ];
