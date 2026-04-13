@@ -82,11 +82,29 @@
     .news-body .date  { font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
     .news-body .desc  { font-size: 12.5px; color: #666; line-height: 1.55; font-family: 'Inter', sans-serif; }
 
+    /* NEWS + RECRUIT 2-col */
+    .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    .recruit-box { background: #F9F3F3; border: 1px solid #EBD8D8; border-radius: 14px; padding: 32px; }
+    .recruit-box h2 { font-size: 22px; font-weight: 700; font-family: Georgia, serif; color: #3E0008; padding-bottom: 12px; border-bottom: 1px solid #EBD8D8; margin-bottom: 20px; }
+    .recruit-box p { font-size: 14px; color: #666; line-height: 1.75; margin-bottom: 20px; }
+    .recruit-box ul { list-style: none; margin-bottom: 20px; }
+    .recruit-box ul li { font-size: 14px; color: #555; padding: 5px 0 5px 16px; position: relative; line-height: 1.55; }
+    .recruit-box ul li::before { content: '→'; position: absolute; left: 0; color: #8B0018; }
+    .recruit-btn { display: inline-block; background: #3E0008; color: #fff; padding: 11px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: background 0.2s; }
+    .recruit-btn:hover { background: #6B0010; }
+
+
+
+
+
+
+
     @media (max-width: 768px) {
       .welcome { padding: 40px 20px; }
       .welcome-inner { flex-direction: column; gap: 32px; }
       .welcome-h1 { font-size: 34px; }
       .cards-grid { grid-template-columns: 1fr; }
+      .bottom-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -236,33 +254,49 @@
     </div>
   </section>
 
-  <!-- NEWS -->
+  <!-- NEWS + RECRUIT -->
   <div style="padding: 48px 0;">
     <div class="container">
-      <div class="section-label">Recent News from DA-Lab</div>
-      <div class="news-item">
-        <span class="tag">Publication</span>
-        <div class="news-body">
-          <div class="title">Extracting declarative constraints for process modeling from natural language descriptions with large language models</div>
-          <div class="date">2026 · G. Park, J. Kofferath, M. Cho</div>
-          <div class="desc">Decision Support Systems, 114627. Leveraging LLMs to automatically extract declarative process constraints from natural language descriptions.</div>
+      <div class="bottom-grid">
+
+        <!-- LEFT: News -->
+        <div>
+          <div class="section-label">Recent News</div>
+          <div class="news-item">
+            <span class="tag">Publication</span>
+            <div class="news-body">
+              <div class="title">Extracting declarative constraints for process modeling from natural language descriptions with large language models</div>
+              <div class="date">2026 · G. Park, J. Kofferath, M. Cho</div>
+              <div class="desc">Decision Support Systems, 114627. Leveraging LLMs to automatically extract declarative process constraints from natural language descriptions.</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <span class="tag">Publication</span>
+            <div class="news-body">
+              <div class="title">Experience Goods and Delayed Price Discovery: Evidence from Information Frictions in Game Releases</div>
+              <div class="date">2026 · P. Sujin, C. Minsu</div>
+              <div class="desc">Mathematics, 14(5), 755. Investigating how information frictions affect price discovery in experience goods markets.</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="news-item">
-        <span class="tag">Publication</span>
-        <div class="news-body">
-          <div class="title">Experience Goods and Delayed Price Discovery: Evidence from Information Frictions in Game Releases</div>
-          <div class="date">2026 · P. Sujin, C. Minsu</div>
-          <div class="desc">Mathematics, 14(5), 755. Investigating how information frictions affect price discovery in experience goods markets.</div>
+
+
+        <!-- RIGHT: Recruiting -->
+        <div>
+          <div class="section-label">Join Us</div>
+          <div class="recruit-box">
+            <h2>Join DA-Lab</h2>
+            <p>We are looking for highly motivated students who are passionate about data analytics, machine learning, and AI research.</p>
+            <ul>
+              <li>Ph.D. and M.S. positions available</li>
+              <li>Undergraduate research internships</li>
+              <li>Strong background in CS, statistics, or related fields</li>
+              <li>Experience with Python and ML frameworks preferred</li>
+            </ul>
+            <a href="mailto:mcho@kw.ac.kr" class="recruit-btn">Contact Prof. Cho</a>
+          </div>
         </div>
-      </div>
-      <div class="news-item">
-        <span class="tag" style="background:#F0FAF0;color:#2A7A2A;">Recruiting</span>
-        <div class="news-body">
-          <div class="title">DA Lab. is looking for highly motivated students</div>
-          <div class="date">2026 · DA-Lab</div>
-          <div class="desc">Recruiting undergraduate and graduate students interested in process mining, machine learning, and AI. Contact: mcho@kw.ac.kr</div>
-        </div>
+
       </div>
     </div>
   </div>
