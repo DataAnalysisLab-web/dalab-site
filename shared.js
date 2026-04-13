@@ -68,9 +68,7 @@ function injectNav(activePage) {
 
   document.querySelector('nav').innerHTML = `
     <div style="display:flex;align-items:center;gap:0;">
-      <a href="https://www.kw.ac.kr/ko/" target="_blank" style="display:flex;align-items:center;margin-right:20px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92">
         <img src="images1/kw_logo.svg" alt="Kwangwoon University" style="height:34px;width:auto;display:block;">
-      </a>
       <div style="width:1px;height:28px;background:rgba(255,255,255,0.2);margin-right:20px;"></div>
       <a href="index.html" class="nav-logo">
         ${NAV_SVG}
