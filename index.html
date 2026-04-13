@@ -70,7 +70,7 @@
 
     /* RESEARCH CARDS */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .r-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 18px; text-align: center; transition: box-shadow 0.2s, border-color 0.2s; }
+    .r-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 18px; text-align: center; transition: box-shadow 0.2s, border-color 0.2s; cursor: pointer; text-decoration: none; display: block; color: inherit; }
     .r-card:hover { border-color: #D4A0A0; box-shadow: 0 4px 16px rgba(62,0,8,0.07); }
     .r-card .ct { font-size: 14px; color: var(--red-dark); font-weight: 600; margin: 12px 0 6px; font-family: 'Inter', sans-serif; }
     .r-card .cd { font-size: 12px; color: #666; line-height: 1.65; font-family: 'Inter', sans-serif; }
@@ -152,7 +152,7 @@
       <div class="section-label">Research Areas</div>
       <div class="cards-grid">
         <!-- Process Mining card -->
-        <div class="r-card">
+        <a href="research.html#process-mining" class="r-card">
           <svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="14" width="22" height="72" rx="3" fill="#1E3A5F" opacity="0.12"/>
             <rect x="3" y="14" width="22" height="72" rx="3" fill="none" stroke="#1E3A5F" stroke-width="2"/>
@@ -183,10 +183,10 @@
           </svg>
           <div class="ct">Process Mining</div>
           <div class="cd">Discovering process models from event logs and optimizing real-world workflows with data-driven insights.</div>
-        </div>
+        </a>
 
         <!-- Text Mining card -->
-        <div class="r-card">
+        <a href="research.html#text-mining" class="r-card">
           <svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <rect x="4" y="15" width="26" height="70" rx="3" fill="#1E3A5F" opacity="0.1"/>
             <rect x="4" y="15" width="26" height="70" rx="3" fill="none" stroke="#1E3A5F" stroke-width="2"/>
@@ -218,10 +218,10 @@
           </svg>
           <div class="ct">Text Mining</div>
           <div class="cd">Extracting meaningful knowledge from unstructured text using NLP and machine learning methods.</div>
-        </div>
+        </a>
 
         <!-- Industrial AI card: factory robot arm + process data -->
-        <div class="r-card">
+        <a href="research.html#industrial-ai" class="r-card">
           <svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="83" width="90" height="4" rx="2" fill="#1E3A5F"/>
             <line x1="14" y1="83" x2="11" y2="87" stroke="#1E3A5F" stroke-width="1" opacity="0.35"/>
@@ -249,7 +249,7 @@
           </svg>
           <div class="ct">Industrial AI</div>
           <div class="cd">Applying AI and machine learning to real-world processes and intelligent systems across diverse application domains.</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -293,7 +293,7 @@
               <li>Strong background in CS, statistics, or related fields</li>
               <li>Experience with Python and ML frameworks preferred</li>
             </ul>
-            <a href="mailto:mcho@kw.ac.kr" class="recruit-btn">Contact Prof. Cho</a>
+            <a href="/cdn-cgi/l/email-protection#5c313f34331c372b723d3f72372e" class="recruit-btn">Contact Prof. Cho</a>
           </div>
         </div>
 
@@ -304,7 +304,4 @@
 </main>
 
 <footer></footer>
-<script src="shared.js"></script>
-<script>injectNav('Home'); injectFooter();</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudf
