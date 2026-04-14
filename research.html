@@ -11,7 +11,7 @@
     body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
     .research-section { padding: 52px 0; }
     .research-block { margin-bottom: 56px; }
-    .research-block:last-child { margin-bottom: 0; }
+    .research-block:last-child { margin-bottom: 100vh; }
 
     .research-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
     .research-card-header {
@@ -28,6 +28,27 @@
     .topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red-bright); flex-shrink: 0; margin-top: 6px; }
 
 
+
+    /* SLIDESHOW */
+    .research-slideshow {
+      width: 100%; margin-bottom: 24px; border-radius: 10px;
+      overflow: hidden; background: #F0F0F0; position: relative;
+      border: 1px solid var(--border);
+    }
+    .research-slideshow img {
+      width: 100%; max-height: 300px; object-fit: contain;
+      display: none; background: #fff;
+    }
+    .research-slideshow img.active { display: block; }
+    .slide-dots {
+      display: flex; justify-content: center; gap: 6px;
+      padding: 8px 0; background: #F9F3F3;
+    }
+    .slide-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #D4A0A0; cursor: pointer; transition: background 0.2s;
+    }
+    .slide-dot.active { background: var(--red-dark); }
     @media (max-width: 768px) {
       .topic-grid { grid-template-columns: 1fr 1fr; }
       .research-card-header { flex-direction: column; align-items: flex-start; }
@@ -85,6 +106,22 @@
             </div>
           </div>
           <div class="research-card-body">
+            <div class="research-slideshow" id="pm-slideshow">
+              <img src="images1/process-mining-0.png" class="active" alt="Process Mining 1">
+              <img src="images1/process-mining-1.png" alt="Process Mining 2">
+              <img src="images1/process-mining-2.png" alt="Process Mining 3">
+              <img src="images1/process-mining-3.png" alt="Process Mining 4">
+              <img src="images1/process-mining-4.png" alt="Process Mining 5">
+              <img src="images1/process-mining-5.png" alt="Process Mining 6">
+              <div class="slide-dots" id="pm-dots">
+                <div class="slide-dot active" onclick="goSlide('pm-slideshow','pm-dots',0)"></div>
+                <div class="slide-dot" onclick="goSlide('pm-slideshow','pm-dots',1)"></div>
+                <div class="slide-dot" onclick="goSlide('pm-slideshow','pm-dots',2)"></div>
+                <div class="slide-dot" onclick="goSlide('pm-slideshow','pm-dots',3)"></div>
+                <div class="slide-dot" onclick="goSlide('pm-slideshow','pm-dots',4)"></div>
+                <div class="slide-dot" onclick="goSlide('pm-slideshow','pm-dots',5)"></div>
+              </div>
+            </div>
             <p class="research-desc">Data Analytics Laboratory conducts a variety of research for process mining, which aims to extract process-oriented knowledge from event logs collected by information systems. This includes various techniques, including process discovery, conformance checking, predictive process monitoring, and others. Our laboratory develops novel methods for process mining and its applications in diverse domains, including healthcare, education, manufacturing, finance, and others.</p>
             <div class="topic-grid">
               <div class="topic-item"><div class="topic-dot"></div>Process discovery</div>
@@ -143,6 +180,16 @@
             </div>
           </div>
           <div class="research-card-body">
+            <div class="research-slideshow" id="tm-slideshow">
+              <img src="images1/text-mining-1.png" class="active" alt="Text Mining 1">
+              <img src="images1/text-mining-2.jpg" alt="Text Mining 2">
+              <img src="images1/text-mining-3.png" alt="Text Mining 3">
+              <div class="slide-dots" id="tm-dots">
+                <div class="slide-dot active" onclick="goSlide('tm-slideshow','tm-dots',0)"></div>
+                <div class="slide-dot" onclick="goSlide('tm-slideshow','tm-dots',1)"></div>
+                <div class="slide-dot" onclick="goSlide('tm-slideshow','tm-dots',2)"></div>
+              </div>
+            </div>
             <p class="research-desc">Data Analytics Laboratory conducts a variety of research for text mining, which aims to investigate valuable information and knowledge from large volumes of text data. This includes various techniques, including text classification, sentiment analysis, topic modeling, LLM-based approaches, and others. Our laboratory resolves industry challenges using text mining techniques and develops novel methods to bridge the gap between NLP and other domains.</p>
             <div class="topic-grid">
               <div class="topic-item"><div class="topic-dot"></div>Language Models</div>
@@ -159,7 +206,7 @@
       </div>
 
       <!-- 3. AI FOR COMPLEX DATA & DECISION-MAKING -->
-      <div class="research-block">
+      <div class="research-block" id="ai-complex" style="scroll-margin-top:80px;">
         <div class="research-card">
           <div class="research-card-header">
             <svg width="72" height="72" viewBox="0 0 100 100" style="flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
@@ -212,11 +259,32 @@
 
     </div>
   </div>
-<div id="ai-complex"></div>
 </main>
 
 <footer></footer>
 <script src="shared.js"></script>
 <script>injectNav('Research'); injectFooter();</script>
+
+<script>
+  function goSlide(slideshowId, dotsId, idx) {
+    const imgs = document.querySelectorAll('#' + slideshowId + ' img');
+    const dots = document.querySelectorAll('#' + dotsId + ' .slide-dot');
+    imgs.forEach(i => i.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    imgs[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+
+  function initSlideshow(slideshowId, dotsId, count, interval) {
+    let cur = 0;
+    setInterval(() => {
+      cur = (cur + 1) % count;
+      goSlide(slideshowId, dotsId, cur);
+    }, interval);
+  }
+
+  initSlideshow('pm-slideshow', 'pm-dots', 6, 3000);
+  initSlideshow('tm-slideshow', 'tm-dots', 3, 3000);
+</script>
 </body>
 </html>
