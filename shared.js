@@ -109,7 +109,7 @@ function injectFooter() {
           ${FOOTER_SVG}
           <span class="footer-logo-text">DA-Lab</span>
         </div>
-        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence /<br>Dept. of Applied Artificial Intelligence<br>Kwangwoon University</p>
+        <p class="footer-tagline">Data Analytics Laboratory<br>School of Information Convergence /<br>Department of Artificial Intelligence Applications<br>Kwangwoon University</p>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-cols">
@@ -119,7 +119,7 @@ function injectFooter() {
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:mcho@kw.ac.kr">Professor | mcho@kw.ac.kr</a>
+          <a href="mailto:mcho@kw.ac.kr">Professor | mcho [at] kw.ac.kr</a>
           <a href="tel:+8229408454">Tel: +82-2-940-8454</a>
           <a href="https://www.kw.ac.kr/ko/" target="_blank">Kwangwoon University</a>
         </div>
