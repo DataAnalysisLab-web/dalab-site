@@ -8,64 +8,68 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="icon" type="image/svg+xml" href="images1/favicon.svg">
   <style>
-    body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
     .projects-section { padding: 52px 0; }
 
     .project-card {
       background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      border: 1px solid #EBD8D8;
+      border-radius: 14px;
       overflow: hidden;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       transition: box-shadow 0.2s, border-color 0.2s;
     }
     .project-card:last-child { margin-bottom: 0; }
-    .project-card:hover { box-shadow: 0 4px 16px rgba(62,0,8,0.07); border-color: #D4A0A0; }
+    .project-card:hover { box-shadow: 0 6px 24px rgba(62,0,8,0.08); border-color: #D4A0A0; }
 
     .project-card-header {
-      background: var(--red-tint);
-      border-bottom: 1px solid var(--border);
+      background: #F9F3F3;
+      border-bottom: 1px solid #EBD8D8;
       padding: 20px 28px;
     }
     .project-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--red-dark);
-      font-family: 'Pretendard', sans-serif;
-      letter-spacing: -0.3px;
-      line-height: 1.5;
-      margin-bottom: 8px;
-      word-break: keep-all;
+      font-size: 16px; font-weight: 700; color: #3E0008;
+      line-height: 1.5; margin-bottom: 8px; word-break: keep-all;
+      font-family: 'Pretendard', sans-serif; letter-spacing: -0.3px;
     }
-    .project-meta {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      flex-wrap: wrap;
+    .project-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .project-period {
+      font-size: 12px; font-weight: 600; color: #8B0018;
+      background: #FEF0F0; border: 1px solid #EBD8D8;
+      padding: 2px 10px; border-radius: 20px;
     }
-    .project-meta .period { color: var(--red-mid); font-weight: 600; font-size: 13px; }
-    .project-meta .funder {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-left: 10px;
-    }
+    .project-funder { font-size: 12px; color: #999; }
 
-    .project-card-body {
-      padding: 20px 28px;
-      min-height: 80px;
-      color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.8;
-      font-family: 'Pretendard', sans-serif;
+    .project-card-body { padding: 24px 28px; font-family: 'Pretendard', sans-serif; }
+
+    .project-en-title {
+      font-size: 13px; color: #3E0008; font-weight: 500;
+      margin-bottom: 14px; line-height: 1.6;
+      font-style: italic; opacity: 0.7;
     }
+    .project-goal {
+      font-size: 13.5px; color: #555; line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .project-info {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      background: #F9F3F3; border-radius: 10px; padding: 14px 18px;
+    }
+    .project-info-item { display: flex; flex-direction: column; gap: 2px; }
+    .info-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #C0A0A0;
+    }
+    .info-value { font-size: 13px; color: #3E0008; font-weight: 500; }
+    .info-value.role { color: #8B0018; font-weight: 700; }
 
     @media (max-width: 768px) {
       .project-card-header { padding: 16px 18px; }
       .project-card-body { padding: 16px 18px; }
       .project-title { font-size: 15px; }
+      .project-info { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -86,19 +90,19 @@
         <div class="project-card-header">
           <div class="project-title">모델 지능, 행동 추론 및 문영 적응을 위한 계층적 AI 기반 프로세스 지능 프레임워크 개발</div>
           <div class="project-meta">
-            <span class="period">2026. 03 ~ 2029. 02</span>
-            <span class="funder"> · 한국연구재단</span>
+            <span class="project-period">2026. 03 ~ 2029. 02</span>
+            <span class="project-funder">한국연구재단</span>
           </div>
         </div>
         <div class="project-card-body">
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">A Layered AI-Augmented Process Science Framework: Model Intelligence, Behavioral Reasoning, and Operational Adaptation</p>
-          <p style="margin-bottom:16px;">This project aims to develop an AI-augmented process science framework that integrates model intelligence, behavioral reasoning, and operational adaptation for data-driven process innovation.</p>
-          <table style="font-size:13px;width:100%;border-collapse:collapse;">
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Funder</td><td style="color:var(--text-primary);padding:3px 0;">National Research Foundation of Korea</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Program</td><td style="color:var(--text-primary);padding:3px 0;">Outstanding Young Scientist Grants Program</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Duration</td><td style="color:var(--text-primary);padding:3px 0;">Mar. 2026 – Feb. 2029</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Role</td><td style="color:var(--red-mid);font-weight:600;padding:3px 0;">Principal Investigator</td></tr>
-          </table>
+          <div class="project-en-title">A Layered AI-Augmented Process Science Framework: Model Intelligence, Behavioral Reasoning, and Operational Adaptation</div>
+          <div class="project-goal">This project aims to develop an AI-augmented process science framework that integrates model intelligence, behavioral reasoning, and operational adaptation for data-driven process innovation.</div>
+          <div class="project-info">
+            <div class="project-info-item"><span class="info-label">Funder</span><span class="info-value">National Research Foundation of Korea</span></div>
+            <div class="project-info-item"><span class="info-label">Program</span><span class="info-value">Outstanding Young Scientist Grants Program</span></div>
+            <div class="project-info-item"><span class="info-label">Duration</span><span class="info-value">Mar. 2026 – Feb. 2029</span></div>
+            <div class="project-info-item"><span class="info-label">Role</span><span class="info-value role">Principal Investigator</span></div>
+          </div>
         </div>
       </div>
 
@@ -106,19 +110,19 @@
         <div class="project-card-header">
           <div class="project-title">AI-BioDynamics: 생물다양성 매핑 및 보전 의사결정을 위한 인공지능</div>
           <div class="project-meta">
-            <span class="period">2025. 10 ~ 2028. 09</span>
-            <span class="funder"> · 한국연구재단</span>
+            <span class="project-period">2025. 10 ~ 2028. 09</span>
+            <span class="project-funder">한국연구재단</span>
           </div>
         </div>
         <div class="project-card-body">
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making</p>
-          <p style="margin-bottom:16px;">This project aims to develop an AI-based platform that integrates remote sensing data and citizen science data to transform biodiversity monitoring, with the ultimate goal of building an operational system at TRL 5 and demonstrating validated monitoring accuracy of over 85% compared with conventional field-based methods.</p>
-          <table style="font-size:13px;width:100%;border-collapse:collapse;">
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Funder</td><td style="color:var(--text-primary);padding:3px 0;">National Research Foundation of Korea</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Program</td><td style="color:var(--text-primary);padding:3px 0;">German–Korean Academia-Industry International Collaboration</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Duration</td><td style="color:var(--text-primary);padding:3px 0;">Oct. 2025 – Sep. 2028</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Role</td><td style="color:var(--red-mid);font-weight:600;padding:3px 0;">Co-Principal Investigator</td></tr>
-          </table>
+          <div class="project-en-title">AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making</div>
+          <div class="project-goal">This project aims to develop an AI-based platform that integrates remote sensing data and citizen science data to transform biodiversity monitoring, with the ultimate goal of building an operational system at TRL 5 and demonstrating validated monitoring accuracy of over 85% compared with conventional field-based methods.</div>
+          <div class="project-info">
+            <div class="project-info-item"><span class="info-label">Funder</span><span class="info-value">National Research Foundation of Korea</span></div>
+            <div class="project-info-item"><span class="info-label">Program</span><span class="info-value">German–Korean Academia-Industry International Collaboration</span></div>
+            <div class="project-info-item"><span class="info-label">Duration</span><span class="info-value">Oct. 2025 – Sep. 2028</span></div>
+            <div class="project-info-item"><span class="info-label">Role</span><span class="info-value role">Co-Principal Investigator</span></div>
+          </div>
         </div>
       </div>
 
@@ -126,19 +130,19 @@
         <div class="project-card-header">
           <div class="project-title">사회과학 분야 내 연구 신뢰성 평가를 위한 LLM 기반 자동 분석 및 검증 연구</div>
           <div class="project-meta">
-            <span class="period">2025. 06 ~ 2027. 04</span>
-            <span class="funder"> · 한국연구재단</span>
+            <span class="project-period">2025. 06 ~ 2027. 04</span>
+            <span class="project-funder">한국연구재단</span>
           </div>
         </div>
         <div class="project-card-body">
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">LLM-Based Automated Analysis and Verification for Research Reliability Evaluation in Social Sciences</p>
-          <p style="margin-bottom:16px;">This project aims to develop an LLM-based framework for the automated and quantitative evaluation of research reliability in social science, enabling more transparent, standardized, and objective assessment of reproducibility, replicability, and robustness.</p>
-          <table style="font-size:13px;width:100%;border-collapse:collapse;">
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Funder</td><td style="color:var(--text-primary);padding:3px 0;">National Research Foundation of Korea</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Program</td><td style="color:var(--text-primary);padding:3px 0;">Early-Career Scholars</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Duration</td><td style="color:var(--text-primary);padding:3px 0;">Jun. 2025 – May. 2027</td></tr>
-            <tr><td style="color:var(--text-muted);padding:3px 16px 3px 0;white-space:nowrap;vertical-align:top;">Role</td><td style="color:var(--red-mid);font-weight:600;padding:3px 0;">Principal Investigator</td></tr>
-          </table>
+          <div class="project-en-title">LLM-Based Automated Analysis and Verification for Research Reliability Evaluation in Social Sciences</div>
+          <div class="project-goal">This project aims to develop an LLM-based framework for the automated and quantitative evaluation of research reliability in social science, enabling more transparent, standardized, and objective assessment of reproducibility, replicability, and robustness.</div>
+          <div class="project-info">
+            <div class="project-info-item"><span class="info-label">Funder</span><span class="info-value">National Research Foundation of Korea</span></div>
+            <div class="project-info-item"><span class="info-label">Program</span><span class="info-value">Early-Career Scholars</span></div>
+            <div class="project-info-item"><span class="info-label">Duration</span><span class="info-value">Jun. 2025 – May. 2027</span></div>
+            <div class="project-info-item"><span class="info-label">Role</span><span class="info-value role">Principal Investigator</span></div>
+          </div>
         </div>
       </div>
 
@@ -146,8 +150,8 @@
         <div class="project-card-header">
           <div class="project-title">듀얼 프로세스 이론 기반 온라인 리뷰의 유용성 실증 연구: 구조방정식 모델링 및 설명 가능한 인공지능을 통한 접근</div>
           <div class="project-meta">
-            <span class="period">2024. 06 ~ 2025. 05</span>
-            <span class="funder"> · 한국연구재단</span>
+            <span class="project-period">2024. 06 ~ 2025. 05</span>
+            <span class="project-funder">한국연구재단</span>
           </div>
         </div>
         <div class="project-card-body">내용을 입력해주세요.</div>
@@ -157,8 +161,8 @@
         <div class="project-card-header">
           <div class="project-title">센서 기반 라이프로그 데이터를 활용한 인공지능 및 프로세스 마이닝 적용 방법 개발 연구</div>
           <div class="project-meta">
-            <span class="period">2024. 03 ~ 2025. 02</span>
-            <span class="funder"> · 광운대학교</span>
+            <span class="project-period">2024. 03 ~ 2025. 02</span>
+            <span class="project-funder">광운대학교</span>
           </div>
         </div>
         <div class="project-card-body">내용을 입력해주세요.</div>
@@ -168,8 +172,8 @@
         <div class="project-card-header">
           <div class="project-title">공통 데이터 모델 및 딥러닝을 활용한 의료형 객체 중심 프로세스 마이닝 개발 연구</div>
           <div class="project-meta">
-            <span class="period">2021. 09 ~ 2024. 02</span>
-            <span class="funder"> · 한국연구재단</span>
+            <span class="project-period">2021. 09 ~ 2024. 02</span>
+            <span class="project-funder">한국연구재단</span>
           </div>
         </div>
         <div class="project-card-body">내용을 입력해주세요.</div>
@@ -179,8 +183,8 @@
         <div class="project-card-header">
           <div class="project-title">지능형 로봇을 위한 기초수학 분야의 학습 패턴 분석 및 교육 개선안 도출: 데이터 애널리틱스 활용 사례 연구</div>
           <div class="project-meta">
-            <span class="period">2021. 09 ~ 2022. 02</span>
-            <span class="funder"> · 한양대학교 산학협력단</span>
+            <span class="project-period">2021. 09 ~ 2022. 02</span>
+            <span class="project-funder">한양대학교 산학협력단</span>
           </div>
         </div>
         <div class="project-card-body">내용을 입력해주세요.</div>
@@ -190,8 +194,8 @@
         <div class="project-card-header">
           <div class="project-title">프로세스 마이닝 기반의 다분야 유즈케이스 도출</div>
           <div class="project-meta">
-            <span class="period">2021. 03 ~ 2023. 02</span>
-            <span class="funder"> · 광운대학교</span>
+            <span class="project-period">2021. 03 ~ 2023. 02</span>
+            <span class="project-funder">광운대학교</span>
           </div>
         </div>
         <div class="project-card-body">내용을 입력해주세요.</div>
