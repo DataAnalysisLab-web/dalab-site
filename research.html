@@ -238,8 +238,11 @@
             </div>
           </div>
           <div class="research-card-body">
-            <div class="research-slideshow" id="ai-slideshow" style="min-height:300px; display:flex; align-items:center; justify-content:center; background:#F9F3F3;">
-              <p style="color:#C0A0A0; font-size:13px; font-style:italic;">이미지가 추가될 예정입니다.</p>
+            <div class="research-slideshow" id="ai-slideshow">
+              <img src="images1/Data-Driven_AI_1.jpeg" class="active" alt="Data-Driven AI 1">
+              <div class="slide-dots" id="ai-dots">
+                <div class="slide-dot active" onclick="goSlide('ai-slideshow','ai-dots',0)"></div>
+              </div>
             </div>
             <p class="research-desc">DA-Lab studies AI and data-driven modeling for complex real-world systems. We develop robust methods for learning from heterogeneous data including temporal, multimodal, sensor, healthcare, and ecological data to enable smarter decision-making across diverse application domains. This means building systems that can predict outcomes, explain their reasoning, and adapt to new environments, ultimately bridging the gap between raw data and actionable intelligence. Our research spans predictive analytics, process-aware modeling, and trustworthy AI, connecting core AI methodologies with practical decision support.</p>
             <div class="topic-grid">
@@ -285,6 +288,7 @@
 
   initSlideshow('pm-slideshow', 'pm-dots', 4, 3000);
   initSlideshow('tm-slideshow', 'tm-dots', 3, 3000);
+  initSlideshow('ai-slideshow', 'ai-dots', 1, 3000);
 </script>
 </body>
 </html>
