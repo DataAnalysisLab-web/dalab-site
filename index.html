@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DA Lab. · Data Analytics Laboratory</title>
+  <title>DA-Lab · Data Analytics Laboratory</title>
   <link rel="icon" type="image/svg+xml" href="images1/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,11 +76,13 @@
     .r-card .cd { font-size: 12px; color: #666; line-height: 1.65; font-family: 'Inter', sans-serif; }
 
     /* NEWS */
-    .news-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #F5EAEA; }
-    .news-item:last-child { border-bottom: none; }
-    .news-body .title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; line-height: 1.4; font-family: 'Inter', sans-serif; }
-    .news-body .date  { font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
-    .news-body .desc  { font-size: 12.5px; color: #666; line-height: 1.55; font-family: 'Inter', sans-serif; }
+    .news-list { list-style: none; padding: 0; }
+    .news-entry { display: flex; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid #F5EAEA; font-size: 13.5px; line-height: 1.65; color: var(--text-secondary); }
+    .news-entry:last-child { border-bottom: none; }
+    .news-bullet { color: var(--red-dark); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .news-entry-text { flex: 1; }
+    .news-date { color: var(--text-muted); font-size: 12.5px; margin-right: 2px; }
+    .news-type { display: inline-block; font-size: 11px; font-weight: 700; color: var(--red-dark); background: var(--red-light); border-radius: 3px; padding: 1px 6px; margin: 0 4px; vertical-align: middle; }
 
     /* NEWS + RECRUIT 2-col */
     .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
@@ -264,22 +266,20 @@
         <!-- LEFT: News -->
         <div>
           <div class="section-label">Recent News</div>
-          <div class="news-item">
-            <span class="tag">Publication</span>
-            <div class="news-body">
-              <div class="title">Extracting declarative constraints for process modeling from natural language descriptions with large language models</div>
-              <div class="date">2026 · G. Park, J. Kofferath, M. Cho</div>
-              <div class="desc">Decision Support Systems, 114627. Leveraging LLMs to automatically extract declarative process constraints from natural language descriptions.</div>
-            </div>
-          </div>
-          <div class="news-item">
-            <span class="tag">Publication</span>
-            <div class="news-body">
-              <div class="title">Experience Goods and Delayed Price Discovery: Evidence from Information Frictions in Game Releases</div>
-              <div class="date">2026 · P. Sujin, C. Minsu</div>
-              <div class="desc">Mathematics, 14(5), 755. Investigating how information frictions affect price discovery in experience goods markets.</div>
-            </div>
-          </div>
+          <ul class="news-list">
+            <li class="news-entry">
+              <span class="news-bullet">▪</span>
+              <span class="news-entry-text">
+                <span class="news-date">(2026.01)</span><span class="news-type">JN</span>"Extracting declarative constraints for process modeling from natural language descriptions with large language models" with G. Park, J. Kofferath, M. Cho was published in <em>Decision Support Systems</em>, 114627.
+              </span>
+            </li>
+            <li class="news-entry">
+              <span class="news-bullet">▪</span>
+              <span class="news-entry-text">
+                <span class="news-date">(2026.01)</span><span class="news-type">JN</span>"Experience Goods and Delayed Price Discovery: Evidence from Information Frictions in Game Releases" with P. Sujin, C. Minsu was published in <em>Mathematics</em>, 14(5), 755.
+              </span>
+            </li>
+          </ul>
         </div>
 
 
