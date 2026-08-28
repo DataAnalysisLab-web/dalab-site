@@ -57,10 +57,18 @@
     /* Anchor landing from other pages (e.g. index news links) */
     .pub-item[id] { scroll-margin-top: 90px; }
     .pub-item:target {
-      background: #FFF8F8;
-      box-shadow: inset 3px 0 0 var(--red-mid);
+      background: #FFF4F4;
+      box-shadow: inset 4px 0 0 var(--red-mid);
       border-radius: 4px;
       padding-left: 14px;
+      animation: pubFlash 1.6s ease-out 1;
+    }
+    @keyframes pubFlash {
+      0%, 30% { background: #FFE4E4; }
+      100%    { background: #FFF4F4; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pub-item:target { animation: none; }
     }
     .year-group.empty { display: none; }
   </style>
