@@ -70,6 +70,14 @@
     .project-card:target {
       border-color: #8B0018;
       box-shadow: 0 6px 24px rgba(62,0,8,0.12);
+      animation: projFlash 1.6s ease-out 1;
+    }
+    @keyframes projFlash {
+      0%, 30% { border-color: #8B0018; box-shadow: 0 0 0 4px rgba(139,0,24,0.18); }
+      100%    { border-color: #8B0018; box-shadow: 0 6px 24px rgba(62,0,8,0.12); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .project-card:target { animation: none; }
     }
 
     @media (max-width: 768px) {
