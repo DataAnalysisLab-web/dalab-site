@@ -65,6 +65,13 @@
     .info-value { font-size: 13px; color: #3E0008; font-weight: 500; }
     .info-value.role { color: #3E0008; font-weight: 500; }
 
+    /* Anchor landing from other pages (e.g. index news links) */
+    .project-card[id] { scroll-margin-top: 90px; }
+    .project-card:target {
+      border-color: #8B0018;
+      box-shadow: 0 6px 24px rgba(62,0,8,0.12);
+    }
+
     @media (max-width: 768px) {
       .project-card-header { padding: 16px 18px; }
       .project-card-body { padding: 16px 18px; }
@@ -86,7 +93,7 @@
   <div class="projects-section">
     <div class="container">
 
-      <div class="project-card">
+      <div class="project-card" id="proj-process-science">
         <div class="project-card-header">
           <div class="project-title">모델 지능, 행동 추론 및 문영 적응을 위한 계층적 AI 기반 프로세스 지능 프레임워크 개발</div>
           <div class="project-meta">
@@ -106,7 +113,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="proj-ai-biodynamics">
         <div class="project-card-header">
           <div class="project-title">AI-BioDynamics: 생물다양성 매핑 및 보전 의사결정을 위한 인공지능</div>
           <div class="project-meta">
