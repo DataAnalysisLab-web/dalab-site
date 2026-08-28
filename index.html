@@ -89,6 +89,28 @@
     }
     .news-link:hover { color: var(--red-mid); border-bottom-color: var(--red-mid); }
     .news-link:focus-visible { outline: 2px solid var(--red-mid); outline-offset: 2px; border-radius: 2px; }
+    .news-list.collapsed .news-entry.extra { display: none; }
+    .news-list.collapsed .news-entry:nth-last-of-type(3) { border-bottom: none; }
+    .news-more {
+      margin-top: 14px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: var(--red-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .news-more::after { content: '\203A'; font-size: 16px; line-height: 1; transform: rotate(90deg); transition: transform 0.2s; }
+    .news-more[aria-expanded="true"]::after { transform: rotate(-90deg); }
+    .news-more:hover { color: var(--red-mid); }
+    .news-more:focus-visible { outline: 2px solid var(--red-mid); outline-offset: 3px; border-radius: 3px; }
+    .news-more-count { color: var(--text-muted); font-weight: 500; }
     .news-type { display: inline-block; font-size: 11px; font-weight: 700; color: var(--red-dark); background: var(--red-light); border-radius: 3px; padding: 1px 6px; margin: 0 4px; vertical-align: middle; }
 
     /* NEWS + RECRUIT — stacked (News first, then Recruit) */
@@ -102,9 +124,7 @@
       background: #F9F3F3;
       border: 1px solid #EBD8D8;
       border-radius: 14px;
-      padding: 32px;
-      max-width: 720px;
-      margin: 0 auto;
+      padding: 32px 36px;
     }
     .recruit-box h2 { font-size: 22px; font-weight: 700; font-family: Georgia, serif; color: #3E0008; padding-bottom: 12px; border-bottom: 1px solid #EBD8D8; margin-bottom: 20px; }
     .recruit-box p { font-size: 14px; color: #666; line-height: 1.75; margin-bottom: 20px; }
@@ -286,7 +306,19 @@
         <!-- News -->
         <div>
           <div class="section-label">Recent News</div>
-          <ul class="news-list">
+          <ul class="news-list" id="newsList">
+            <li class="news-entry">
+              <span class="news-bullet">▪</span>
+              <span class="news-entry-text">
+                <span class="news-date">(2026.08)</span>The paper entitled <a href="publications.html#pub-esg-bayesian" class="news-link">"Integrating Text-Derived ESG Signals into Bayesian Portfolio Optimization: Evidence from South Korea"</a> has been accepted for publication in <strong>Computational Economics</strong>.
+              </span>
+            </li>
+            <li class="news-entry">
+              <span class="news-bullet">▪</span>
+              <span class="news-entry-text">
+                <span class="news-date">(2026.06)</span>The paper entitled <a href="publications.html#pub-review-helpfulness" class="news-link">"Information Processing and Review Helpfulness in Online Platforms: A Dual-Process Perspective"</a> has been accepted for publication in <strong>IEEE Access</strong>.
+              </span>
+            </li>
             <li class="news-entry">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
@@ -299,19 +331,22 @@
                 <span class="news-date">(2026.03)</span>Our lab has been awarded the <a href="projects.html#proj-process-science" class="news-link"><strong>Outstanding Young Scientist Grants</strong></a> entitled "A Layered AI-Augmented Process Science Framework: Model Intelligence, Behavioral Reasoning, and Operational Adaptation" funded by MSIT and NRF.
               </span>
             </li>
-            <li class="news-entry">
+            <li class="news-entry extra">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
                 <span class="news-date">(2026.01)</span>The paper entitled <a href="publications.html#pub-declarative-constraints" class="news-link">"Extracting declarative constraints for process modeling from natural language descriptions with large language models"</a> has been accepted for publication in <strong>Decision Support Systems</strong>.
               </span>
             </li>
-            <li class="news-entry">
+            <li class="news-entry extra">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
                 <span class="news-date">(2025.10)</span>Our lab has been awarded the <a href="projects.html#proj-ai-biodynamics" class="news-link"><strong>German–Korean Academia-Industry International Collaboration Grants</strong></a> entitled "AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making" funded by MSIT and NRF.
               </span>
             </li>
           </ul>
+          <button type="button" class="news-more" id="newsToggle" aria-expanded="false" aria-controls="newsList">
+            See all news <span class="news-more-count">(6)</span>
+          </button>
         </div>
 
         <!-- Recruiting -->
@@ -337,6 +372,26 @@
 
 <footer></footer>
 <script src="shared.js"></script>
-<script>injectNav('Home'); injectFooter();</script>
+<script>
+  injectNav('Home');
+  injectFooter();
+
+  (function () {
+    var list = document.getElementById('newsList');
+    var btn = document.getElementById('newsToggle');
+    if (!list || !btn) return;
+
+    var total = list.querySelectorAll('.news-entry').length;
+    btn.querySelector('.news-more-count').textContent = '(' + total + ')';
+    list.classList.add('collapsed');
+
+    btn.addEventListener('click', function () {
+      var collapsed = list.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      btn.childNodes[0].nodeValue = collapsed ? 'See all news ' : 'Show less ';
+      btn.querySelector('.news-more-count').style.display = collapsed ? '' : 'none';
+    });
+  })();
+</script>
 </body>
 </html>
