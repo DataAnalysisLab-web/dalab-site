@@ -81,6 +81,14 @@
     .news-bullet { color: var(--red-dark); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
     .news-entry-text { flex: 1; }
     .news-date { color: var(--text-muted); font-size: 12.5px; margin-right: 2px; }
+    .news-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted #C8A8A8;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .news-link:hover { color: var(--red-mid); border-bottom-color: var(--red-mid); }
+    .news-link:focus-visible { outline: 2px solid var(--red-mid); outline-offset: 2px; border-radius: 2px; }
     .news-type { display: inline-block; font-size: 11px; font-weight: 700; color: var(--red-dark); background: var(--red-light); border-radius: 3px; padding: 1px 6px; margin: 0 4px; vertical-align: middle; }
 
     /* NEWS + RECRUIT — stacked (News first, then Recruit) */
@@ -282,25 +290,25 @@
             <li class="news-entry">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
-                <span class="news-date">(2026.04)</span>The paper entitled "Structure Learning-Based Interaction Feature Construction for Bank Failure Prediction" has been accepted for publication in <strong>IEEE Access</strong>.
+                <span class="news-date">(2026.04)</span>The paper entitled <a href="publications.html#pub-bank-failure" class="news-link">"Structure Learning-Based Interaction Feature Construction for Bank Failure Prediction"</a> has been accepted for publication in <strong>IEEE Access</strong>.
               </span>
             </li>
             <li class="news-entry">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
-                <span class="news-date">(2026.03)</span>Our lab has been awarded the <strong>Outstanding Young Scientist Grants</strong> entitled "A Layered AI-Augmented Process Science Framework: Model Intelligence, Behavioral Reasoning, and Operational Adaptation" funded by MSIT and NRF.
+                <span class="news-date">(2026.03)</span>Our lab has been awarded the <a href="projects.html#proj-process-science" class="news-link"><strong>Outstanding Young Scientist Grants</strong></a> entitled "A Layered AI-Augmented Process Science Framework: Model Intelligence, Behavioral Reasoning, and Operational Adaptation" funded by MSIT and NRF.
               </span>
             </li>
             <li class="news-entry">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
-                <span class="news-date">(2026.01)</span>The paper entitled "Extracting declarative constraints for process modeling from natural language descriptions with large language models" has been accepted for publication in <strong>Decision Support Systems</strong>.
+                <span class="news-date">(2026.01)</span>The paper entitled <a href="publications.html#pub-declarative-constraints" class="news-link">"Extracting declarative constraints for process modeling from natural language descriptions with large language models"</a> has been accepted for publication in <strong>Decision Support Systems</strong>.
               </span>
             </li>
             <li class="news-entry">
               <span class="news-bullet">▪</span>
               <span class="news-entry-text">
-                <span class="news-date">(2025.10)</span>Our lab has been awarded the <strong>German–Korean Academia-Industry International Collaboration Grants</strong> entitled "AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making" funded by MSIT and NRF.
+                <span class="news-date">(2025.10)</span>Our lab has been awarded the <a href="projects.html#proj-ai-biodynamics" class="news-link"><strong>German–Korean Academia-Industry International Collaboration Grants</strong></a> entitled "AI-BioDynamics: Artificial Intelligence for Biodiversity Mapping and Conservation Decision-Making" funded by MSIT and NRF.
               </span>
             </li>
           </ul>
