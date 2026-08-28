@@ -53,6 +53,15 @@
 
     .note { font-size: 11.5px; color: #AAA; }
     .pub-item.hidden { display: none; }
+
+    /* Anchor landing from other pages (e.g. index news links) */
+    .pub-item[id] { scroll-margin-top: 90px; }
+    .pub-item:target {
+      background: #FFF8F8;
+      box-shadow: inset 3px 0 0 var(--red-mid);
+      border-radius: 4px;
+      padding-left: 14px;
+    }
     .year-group.empty { display: none; }
   </style>
 </head>
@@ -106,7 +115,7 @@
           </div>
         </div>
         
-        <div class="pub-item" data-tags="journal pm text">
+        <div class="pub-item" id="pub-bank-failure" data-tags="journal pm text">
           <div class="pub-body">
             <div class="title">
               <a href="https://doi.org/10.1109/ACCESS.2026.3689132" target="_blank">Structure Learning-Based Interaction Feature Construction for Bank Failure Prediction</a>
@@ -119,7 +128,7 @@
           </div>
         </div>
         
-        <div class="pub-item" data-tags="journal pm text">
+        <div class="pub-item" id="pub-declarative-constraints" data-tags="journal pm text">
           <div class="pub-body">
             <div class="title">
               <a href="https://doi.org/10.1016/j.dss.2026.114627" target="_blank">Extracting declarative constraints for process modeling from natural language descriptions with large language models</a>
