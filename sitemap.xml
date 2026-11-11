@@ -1,1 +1,54 @@
 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/research.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/publications.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/projects.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/members.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/teaching.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/contact.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://dataanalysislab-web.github.io/dalab-site/professor.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
